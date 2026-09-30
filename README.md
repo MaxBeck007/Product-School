@@ -8,12 +8,12 @@
 
 | # | Module | Commits | Status | Folder |
 |---|--------|---------|--------|--------|
-| 1 | **Orient** | CLAUDE.md, project, strategy, change log, first skill | ☐ | [`01-orient/`](01-orient/) |
-| 2 | **Discover** | synthesis, feedback, competitive, decision brief | ☐ | [`02-research/`](02-research/) |
-| 3 | **Build** | prototype, iteration log, hypothesis, triad plan | ☐ | [`03-build/`](03-build/) |
-| 4 | **Collaborate** | codebase tour, spec readiness, design review, QA | ☐ | [`04-team/`](04-team/) |
-| 5 | **Decide** | findings, diagnosis, memo, experiment, skills, deck | ☐ | [`05-decide/`](05-decide/) |
-| 6 | **Systematize** | workspace, 3 skills, agent stack, final presentation | ☐ | [`06-systems/`](06-systems/) |
+| 1 | **Orient** | CLAUDE.md, project, strategy, change log, first skill | ☑ | [`01-orient/`](01-orient/) |
+| 2 | **Discover** | synthesis, feedback, competitive, decision brief | ☑ | [`02-research/`](02-research/) |
+| 3 | **Build** | prototype, iteration log, hypothesis, triad plan | ☑ | [`03-build/`](03-build/) |
+| 4 | **Collaborate** | codebase tour, spec readiness, design review, QA | ☑ | [`04-team/`](04-team/) |
+| 5 | **Decide** | findings, diagnosis, memo, experiment, skills, deck | ☑ | [`05-decide/`](05-decide/) |
+| 6 | **Systematize** | workspace, 3 skills, agent stack, final presentation | ☑ | [`06-systems/`](06-systems/) |
 
 ---
 

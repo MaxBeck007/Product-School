@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>P2, Know Your Users, One-Pager</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; color: #1b1d22; }
+  h1 { font-size: 24px; font-weight: 600; margin: 0 0 4px; }
+  h2 { font-size: 17px; font-weight: 600; margin: 26px 0 10px; }
+  .sub { color: #6b7280; font-size: 14px; margin: 0 0 20px; }
+  .lead { font-size: 15px; line-height: 1.6; color: #1b1d22; background: #f4f4f2; border-radius: 8px; padding: 14px 16px; margin: 0 0 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-weight: 600; color: #6b7280; border-bottom: 1px solid #e5e6ea; padding: 6px 8px 6px 0; font-size: 12.5px; text-transform: uppercase; letter-spacing: .03em; }
+  td { border-top: 1px solid #e5e6ea; padding: 8px 8px 8px 0; color: #4b4b48; vertical-align: top; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; background: #f4f4f2; padding: 1px 5px; border-radius: 4px; color: #3a3a37; }
+  ol, ul { font-size: 14px; color: #4b4b48; line-height: 1.6; padding-left: 20px; margin: 0; }
+  li { margin-bottom: 7px; }
+  li strong { color: #1b1d22; }
+  .cite { color: #6b7280; font-size: 12.5px; }
+  .badge { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; white-space: nowrap; }
+  .badge.done { background: #eaf3de; color: #3b6d11; }
+  .badge.med { background: #faeeda; color: #854f0b; }
+  .badge.low { background: #f7e2e2; color: #8a2b2b; }
+  .note { font-size: 13.5px; color: #4b4b48; line-height: 1.6; border-left: 3px solid #e5e6ea; padding: 2px 0 2px 12px; margin: 0 0 10px; }
+</style>
+</head>
+<body>
+
+<h1>P2, Know Your Users</h1>
+<p class="sub">Section complete <span class="badge done">4 lessons + bonus</span> &nbsp;·&nbsp; work dated 2026-09-28 &nbsp;·&nbsp; source: <code>streakly-scenario-claude-code-for-pms.md</code> lines 174-301</p>
+
+<p class="lead">P2 turned three interview excerpts and ten NPS comments into one sourced conclusion: the retention problem is the <strong>irreversible streak reset</strong>, not the lessons and not primarily notifications. That conclusion is what the Comeback screen recommendation rests on, and everything from P3 onward cites it.</p>
+
+<h2>What we produced</h2>
+<table>
+  <tr><th>Lesson</th><th>Deliverable</th><th>File</th></tr>
+  <tr><td>P2L1</td><td>Top 5 themes, verbatim quotes, contradictions, week-1 insight</td><td><code>research/interview-synthesis.md</code></td></tr>
+  <tr><td>P2L2</td><td>Themes ranked by frequency, praise vs complaints, top 3 actionable issues, findings report for Marcus</td><td><code>research/nps-analysis.md</code></td></tr>
+  <tr><td>P2L3</td><td>4-competitor matrix and 2 white-space gaps</td><td><code>research/competitive-matrix.md</code></td></tr>
+  <tr><td>P2L3 bonus</td><td>Competitor sentiment summary, gap re-test</td><td><code>research/competitive-reddit.md</code></td></tr>
+  <tr><td>P2L4</td><td>1-page decision brief for Marcus</td><td><code>docs/decision-brief.md</code></td></tr>
+</table>
+
+<h2>What we learned</h2>
+<ol>
+  <li><strong>The punishing reset is the dominant theme.</strong> 6 of 10 NPS comments cite it directly; 2 name a streak freeze as the fix by feature name. <span class="cite">(nps-analysis.md)</span></li>
+  <li><strong>Users hit the punishing side of the mechanic before the rewarding side.</strong> Priya's "look what you built" moment took about 3 weeks; Amara is anxious at day 4 and Tom churned at week 5. <span class="cite">(interview-synthesis.md)</span></li>
+  <li><strong>Notification fatigue is real but secondary, and self-defeating.</strong> 2 of 10 comments cite nagging or random notifications, and both users turned notifications off entirely, closing the channel that could win them back. <span class="cite">(nps-analysis.md)</span></li>
+  <li><strong>The white space is free forgiveness.</strong> Duolingo sells recovery (gem-priced freeze and repair); Babbel, Elevate, and Habitica have no reactive comeback flow at all. None pair acknowledgment with a low-effort re-entry action. <span class="cite">(competitive-matrix.md)</span></li>
+  <li><strong>Priya undercuts herself as a template,</strong> unprompted: "I think most people quit long before the habit forms." Worth keeping when anyone argues from power-user behavior. <span class="cite">(interview-synthesis.md)</span></li>
+</ol>
+
+<h2>The decision it produced</h2>
+<p class="note">Recommended <strong>Option B, the personalized Comeback screen</strong> (best-streak stat, 60-second comeback lesson, one-tap streak freeze) over status quo (A) or a notifications-only fix (C). Rationale: the reset theme is the largest and most consistently confirmed finding across every source, and it is unclaimed white space. <span class="cite">(decision-brief.md)</span></p>
+
+<h2>Confidence and caveats</h2>
+<ul>
+  <li><strong>Course-supplied inputs.</strong> The interview excerpts and NPS verbatims are the fictional scenario data in the course prompts, not IDEXX or real Streakly research. Findings 1-3 and 5 are faithful to those inputs; they are not evidence about a real product.</li>
+  <li><strong>Competitive matrix is real research</strong> <span class="badge done">verified</span>, web search retrieved 2026-09-28, with live source links per claim.</li>
+  <li><strong>The Reddit bonus is the weak link.</strong> Primary threads were not retrievable, so that file is aggregator and blog commentary about Reddit-adjacent sentiment, labeled as such rather than backfilled with invented quotes. Confidence: <span class="badge med">medium</span> Duolingo and Habitica, <span class="badge low">low</span> Babbel, <span class="badge low">none</span> Elevate.</li>
+  <li><strong>Method note kept honest in P2L1:</strong> where a theme appeared in only one interview, the file says so instead of pairing it with a second person's quote, so "2 quotes per theme" was not met everywhere by design.</li>
+</ul>
+
+<h2>What P2 fed downstream</h2>
+<ul>
+  <li><code>docs/prd.md</code> (P6L1) is written from the P2 research stack plus P3 hypothesis work. <span class="cite">(change_log.md, Entry 3)</span></li>
+  <li>The freeze mechanic tested in the prototype and challenged by the Tom persona in P3 traces back to the 2 NPS comments naming it.</li>
+  <li><strong>Still unresolved, from P2's own logic:</strong> if a lapsed user has already turned notifications off (finding 3), how do they ever see the Comeback screen? Raised as the highest-risk objection in <code>docs/objection-log.md</code> and carried into the PRD's open questions.</li>
+</ul>
+
+</body>
+</html>

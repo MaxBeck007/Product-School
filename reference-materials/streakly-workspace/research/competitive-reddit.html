@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Competitive Reddit sentiment, P2L3 bonus</title>
+<style>
+  :root { --ink:#1b1d22; --mut:#6b7280; --line:#e5e6ea; --bg:#f4f4f2; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; margin:0; color:var(--ink); background:#fff; }
+  .wrap { max-width:820px; margin:0 auto; padding:32px 20px 56px; }
+  .eyebrow { font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); margin:0 0 6px; }
+  .src { font-size:12.5px; color:var(--mut); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; margin:0 0 20px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+  .doc { font-size:14.5px; line-height:1.62; color:#3b3b39; }
+  .doc h1 { font-size:22px; font-weight:600; color:var(--ink); margin:0 0 10px; }
+  .doc h2 { font-size:16.5px; font-weight:600; color:var(--ink); margin:28px 0 8px; padding-top:16px; border-top:1px solid var(--line); }
+  .doc h3 { font-size:14.5px; font-weight:600; color:var(--ink); margin:22px 0 6px; }
+  .doc p { margin:0 0 12px; }
+  .doc ul, .doc ol { margin:0 0 12px; padding-left:22px; }
+  .doc li { margin-bottom:6px; }
+  .doc blockquote { margin:0 0 14px; padding:10px 14px; background:var(--bg); border-radius:8px; font-size:13.5px; color:#4b4b48; }
+  .doc blockquote p:last-child { margin-bottom:0; }
+  .doc hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+  .doc code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px; background:var(--bg); padding:1px 5px; border-radius:4px; color:#3a3a37; }
+  .doc strong { color:var(--ink); }
+  .doc a { color:#1f5fa8; text-decoration:none; border-bottom:1px solid #cddcee; }
+  .tw { overflow-x:auto; margin:0 0 14px; }
+  .doc table { border-collapse:collapse; font-size:13px; min-width:100%; }
+  .doc th { text-align:left; font-weight:600; color:var(--mut); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em; border-bottom:1px solid var(--line); padding:7px 12px 7px 0; white-space:nowrap; }
+  .doc td { border-top:1px solid var(--line); padding:9px 12px 9px 0; vertical-align:top; }
+  @media print { .wrap { padding:0; max-width:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">P2L3 bonus &nbsp;·&nbsp; P2, Know Your Users</p>
+  <p class="src">streakly/research/competitive-reddit.md</p>
+  <div class="doc" id="doc"></div>
+</div>
+<script type="application/json" id="data">"# Competitive Reddit Sentiment\n\n> **Method note, read before using this file:** web search did not return primary\n> Reddit threads or verbatim comments from r/languagelearning, r/duolingo,\n> r/GetStudying, or app-specific subreddits, despite several targeted and\n> `site:reddit.com` queries. What it returned instead is aggregator and blog\n> commentary that itself summarizes or paraphrases user sentiment (including some\n> that references Reddit without quoting it). I'm not fabricating Reddit quotes to\n> fill the gap. Everything below is labeled by source type, and confidence is lower\n> than the P2L3 competitive matrix. **What would confirm or upgrade this:** direct\n> access to Reddit (native search or a Reddit connector) to pull actual threads.\n\n---\n\n## Duolingo\n\n**What users are reported to love:** the streak mechanic itself is called out\n(secondhand) as motivating precisely because of the \"slack\" a freeze provides,\nresearch cited in aggregator content suggests optional slack can be more\nmotivating than rigid all-or-nothing rules. [japm.substack.com](https://japm.substack.com/p/the-psychology-behind-duolingos-most)\n\n**What users are reported to complain about most:**\n- Broad backlash to the 2025 \"energy system\" overhaul: in an 11,000-respondent\n  community poll, nearly half of respondents disliked it, most commonly because it\n  penalizes even skilled learners. **Verified via aggregator, not primary source.**\n- Reports of streak-freeze gem prices increasing over time (200 \u2192 480 gems cited by\n  some users), read by some as the app monetizing the fear of loss it created.\n  [x.com/grok summary](https://x.com/grok/status/1959194747001790695)\n- A personal essay (Substack, not Reddit) titled \"I rage quit Duolingo today\" and\n  another \"Kill Your Streaks\" both describe the streak as a source of guilt rather\n  than motivation. [talentandsarcasm.substack.com](https://talentandsarcasm.substack.com/p/i-rage-quit-duolingo-today),\n  [savannahkopp.substack.com](https://savannahkopp.substack.com/p/kill-your-streaks)\n\n**Mentions of switching away:** Tom's interview (`research/interview-synthesis.md`)\nalready gives us a primary, first-party account of switching *to* Duolingo from\nStreakly, citing Duolingo's freeze as \"forgiving.\" I found no reliable secondary\nsource of users switching *away from* Duolingo specifically over streak mechanics.\n\n**What users reportedly wish it did differently:** slack/forgiveness without a\nprice tag attached, i.e. several sources frame the core complaint as \"the\nforgiveness mechanic exists, but it's a paywall, not a kindness.\"\n\n---\n\n## Babbel\n\n**What users are reported to love:** structured lessons and real dialogue practice\nover gamified competition; the new AI pronunciation feature (Babbel Speak).\n[studyfrenchspanish.com](https://www.studyfrenchspanish.com/babbel-review/)\n\n**What users are reported to complain about most:** cost relative to Duolingo, and\none review source specifically calls the mobile app \"glitchy.\"\n[Babbel vs Duolingo comparison](https://www.sites.google.com/site/videoblocksreview/best-language-learning-apps/babbel-vs-duolingo)\n\n**Mentions of switching away / wishes:** no Reddit-sourced or primary-source\nmaterial found either direction. **Low confidence, not enough signal to report.**\n\n---\n\n## Elevate\n\n**What users are reported to love / complain about:** search did not surface\nReddit or aggregator sentiment specific to Elevate's streak or comeback mechanics.\nThe only related material found was App Store metadata and unrelated apps that\nalso happen to be named \"Elevate.\" **No usable signal for this competitor.**\n\n---\n\n## Habitica\n\n**What users are reported to complain about most (aggregator-sourced):** streak\ndata loss after a sync or reinstall, paywalls that surface mid-flow instead of at\nonboarding, gamification fatigue, and customization limits that make habits feel\nmismatched to real life. Also cited: lack of offline support, excessive\nnotifications, and complexity of some features.\n[unstar.app](https://unstar.app/blog/habitica-streaks-productive-way-of-life-habit-bull-habit-tracker-apps-ranked-2026),\n[justuseapp.com](https://justuseapp.com/en/app/994882113/habitica-gamified-taskmanager/reviews)\n\n**What users are reported to love:** the separation of Habits/To-Dos/Dailies, and\nthe gentler character-customization/social layer.\n\n**Mentions of switching away / wishes:** none found with attribution strong enough\nto report.\n\n---\n\n## Sentiment summary: where each competitor has the most user friction\n\n| Competitor | Most-cited friction (aggregator-sourced) | Confidence |\n| --- | --- | --- |\n| Duolingo | Monetized forgiveness (paid freeze/repair) + 2025 energy-system backlash | Medium, cross-corroborated across several sources |\n| Habitica | Data loss on sync/reinstall, mid-flow paywalls, notification overload | Medium |\n| Babbel | Cost, app polish | Low, single source |\n| Elevate | No signal found | None |\n\n## Do the P2L3 competitive-matrix gaps hold up?\n\nThe two gaps identified in `research/competitive-matrix.md` were: (1) no competitor\noffers a free, personal comeback moment after an unplanned miss, and (2) none pair\nacknowledgment with a low-effort re-entry action.\n\nThis aggregator-level sentiment **does not contradict either gap**, and the\nDuolingo backlash over monetized forgiveness arguably strengthens gap 1: it's not\njust that Duolingo's recovery mechanic is paid, users are reported to actively\nresent that it's paid. But I want to flag the confidence honestly: this is\nsecondhand commentary about Reddit-adjacent sentiment, not primary Reddit posts. If\nthis needs to hold up in front of Marcus or Raj, the next step should be pulling\nactual r/duolingo and r/languagelearning threads rather than relying on this file.\n"</script>
+<script>
+(function(){
+  var MD = JSON.parse(document.getElementById('data').textContent);
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function inl(s){
+    s = esc(s);
+    s = s.replace(/`([^`]+)`/g, function(m,a){ return '<code>'+a+'</code>'; });
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(^|[\s(])\*([^*]+)\*/g, '$1<em>$2</em>');
+    return s;
+  }
+  function row(line){ return line.trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map(function(x){ return x.trim(); }); }
+  function isSep(line){ return /^\s*\|[\s:|-]+\|\s*$/.test(line); }
+  function render(md){
+    var L = md.split('\n'), out = [], i = 0;
+    while(i < L.length){
+      var ln = L[i];
+      if(/^\s*$/.test(ln)){ i++; continue; }
+      if(/^---+\s*$/.test(ln)){ out.push('<hr>'); i++; continue; }
+      var h = ln.match(/^(#{1,6})\s+(.*)$/);
+      if(h){ var n = h[1].length; out.push('<h'+n+'>'+inl(h[2])+'</h'+n+'>'); i++; continue; }
+      if(/^>\s?/.test(ln)){
+        var q = [];
+        while(i < L.length && /^>\s?/.test(L[i])){ q.push(L[i].replace(/^>\s?/,'')); i++; }
+        out.push('<blockquote>'+render(q.join('\n'))+'</blockquote>'); continue;
+      }
+      if(/^\s*\|/.test(ln) && i+1 < L.length && isSep(L[i+1])){
+        var head = row(ln); i += 2; var body = [];
+        while(i < L.length && /^\s*\|/.test(L[i])){ body.push(row(L[i])); i++; }
+        var t = '<div class="tw"><table><thead><tr>'+head.map(function(c){ return '<th>'+inl(c)+'</th>'; }).join('')+'</tr></thead><tbody>';
+        t += body.map(function(r){ return '<tr>'+r.map(function(c){ return '<td>'+inl(c)+'</td>'; }).join('')+'</tr>'; }).join('');
+        out.push(t+'</tbody></table></div>'); continue;
+      }
+      var lm = ln.match(/^(\s*)([-*]|\d+\.)\s+(.*)$/);
+      if(lm){
+        var ordered = /\d/.test(lm[2]); var items = [], cur = null;
+        while(i < L.length){
+          var m2 = L[i].match(/^(\s*)([-*]|\d+\.)\s+(.*)$/);
+          if(m2){ if(cur) items.push(cur); cur = [m2[3]]; i++; continue; }
+          if(/^\s+\S/.test(L[i]) && cur){ cur.push(L[i].trim()); i++; continue; }
+          if(/^\s*$/.test(L[i]) && i+1 < L.length && /^(\s*)([-*]|\d+\.)\s+/.test(L[i+1])){ i++; continue; }
+          break;
+        }
+        if(cur) items.push(cur);
+        var tag = ordered ? 'ol' : 'ul';
+        out.push('<'+tag+'>'+items.map(function(it){ return '<li>'+inl(it.join(' '))+'</li>'; }).join('')+'</'+tag+'>');
+        continue;
+      }
+      var p = [];
+      while(i < L.length && !/^\s*$/.test(L[i]) && !/^(#{1,6}\s|>|---+\s*$)/.test(L[i]) && !/^\s*\|/.test(L[i]) && !/^(\s*)([-*]|\d+\.)\s+/.test(L[i])){ p.push(L[i].trim()); i++; }
+      if(p.length) out.push('<p>'+inl(p.join(' '))+'</p>');
+    }
+    return out.join('\n');
+  }
+  document.getElementById('doc').innerHTML = render(MD);
+})();
+</script>
+</body>
+</html>
