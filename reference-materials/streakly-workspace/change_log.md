@@ -574,3 +574,35 @@ change what roleplayed-Raj or roleplayed-Lena already said, it's a new lens
 on the same documented behavior.
 
 **Open item carried forward:** none.
+
+---
+
+## Entry 12, Raj T-shirt sizes the effort (end of Module 4), roleplayed
+
+**Date:** 2026-09-30. **Label: roleplayed, not a real estimate.** Full
+writeup: `docs/effort-tshirt-sizing.md`. Not a scripted course exercise,
+Max asked for this directly, grounded in everything accumulated through P4.
+
+**What happened:** sized the reactive Comeback screen only (schema change +
+migration, freeze eligibility logic, client build, empty-state edge case),
+explicitly excluding personalization (already its own ticket) and the
+proactive piece (no concept exists, sizing nothing would be a guess).
+
+**The size: L.** Schema change and migration is the long pole, not the
+client screen, the equivalent of the `User` model is touched everywhere
+(`docs/codebase-summary.md` section 5).
+
+**Assumption the size depends on, stated rather than buried:** the
+discovery trigger is assumed to be a cheap server-side check on next app
+open. If it actually needs new push notification infrastructure, size
+becomes **XL** instead. This ties a real cost to `docs/prd.md` Open
+Question 7, which was previously just a documented gap, not a decision with
+a price attached.
+
+**Change made:** new file only, `docs/effort-tshirt-sizing.md`. No changes
+to `docs/prd.md`, `docs/spec-readiness.md`, or the prototype.
+
+**Open item carried forward:** `docs/prd.md` Open Question 7 (discovery
+trigger) now has a cost attached (L vs. XL), which raises its priority
+relative to the other open questions, but the question itself is still
+unresolved.
