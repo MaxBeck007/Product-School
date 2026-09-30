@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Streakly Comeback Screen, One-Pager</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1b1d22; }
+  h1 { font-size: 24px; font-weight: 600; margin: 0 0 4px; }
+  h2 { font-size: 18px; font-weight: 600; margin: 28px 0 10px; }
+  .sub { color: #6b7280; font-size: 14px; margin: 0 0 20px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 8px; }
+  .metric { background: #f4f4f2; border-radius: 8px; padding: 14px; }
+  .metric .label { font-size: 13px; color: #6b7280; margin: 0 0 4px; }
+  .metric .value { font-size: 22px; font-weight: 600; margin: 0; }
+  .row { display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid #e5e6ea; }
+  .badge { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 6px; flex-shrink: 0; height: 20px; white-space: nowrap; }
+  .badge.done { background: #eaf3de; color: #3b6d11; }
+  .badge.partial { background: #faeeda; color: #854f0b; }
+  .row p { font-size: 14px; margin: 0; color: #4b4b48; line-height: 1.5; }
+  ul { font-size: 14px; color: #4b4b48; line-height: 1.6; padding-left: 20px; margin: 0; }
+</style>
+</head>
+<body>
+
+<h1>Streakly comeback screen</h1>
+<p class="sub">Pilot significant, not yet scale-ready. Full test recommended before rollout.</p>
+
+<div class="metrics">
+  <div class="metric"><p class="label">Day-7 retention drop</p><p class="value">48% &rarr; 39%</p></div>
+  <div class="metric"><p class="label">Pilot day-7, treatment vs control</p><p class="value">76% vs 46%</p></div>
+  <div class="metric"><p class="label">Pilot significance</p><p class="value">p = 0.002</p></div>
+  <div class="metric"><p class="label">Needed for full test</p><p class="value">~1,568/variant</p></div>
+</div>
+
+<h2>What's built</h2>
+
+<div class="row"><span class="badge partial">P1 partial</span><p>PRD skeleton from the original Slack thread. CLAUDE.md, strategy.md, and the weekly-status skill are still open.</p></div>
+<div class="row"><span class="badge done">P2 done</span><p>Interview synthesis, NPS analysis, competitive matrix and Reddit sentiment, decision brief recommending the Comeback screen over notification-only fixes.</p></div>
+<div class="row"><span class="badge done">P3 done</span><p>PM brief, a 3-screen click-through prototype, hypothesis statement, triad session prep, 2 fixes logged from mock usability rounds.</p></div>
+<div class="row"><span class="badge done">P4 done</span><p>Codebase tour of a real reference repo, 3 stakeholder profiles, spec readiness and design review roleplays, QA checklist.</p></div>
+<div class="row"><span class="badge done">P5 done</span><p>Real SQL against 5 CSVs, metric tree diagnosis, recommendation memo, and a powered experiment design.</p></div>
+
+<h2>Open gaps</h2>
+<ul>
+  <li>Freeze eligibility rule is only a discussed position, not built into the prototype.</li>
+  <li>Real weekly eligible-user volume is unknown, needed to size the full test.</li>
+  <li>Lesson content is fixed to one track, not personalized.</li>
+</ul>
+
+</body>
+</html>
