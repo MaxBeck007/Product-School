@@ -53,3 +53,23 @@ conversation with Marcus:** lead with the recommendation and the number, the
 decision brief already does this (`docs/decision-brief.md` puts the
 recommendation and Day-7 retention figures up front), keep that discipline in
 person too.
+
+## Insights Discovery color profile (inferred, not a real assessment)
+
+**Primary: Fiery Red. Secondary: Cool Blue.**
+
+**Why Red:** wants the recommendation in the first sentence, not the last.
+Deliberately separated problem from solution ("I want to make sure we're
+aligned on the problem before we start designing solutions"), pushed for a
+specific, falsifiable cause rather than accepting the first framing offered,
+moves quickly once something is concrete ("I like that framing. What would
+that look like?"). Direct, Decisive, Purposeful.
+
+**Why Blue as secondary, not Yellow:** he doesn't just want speed, he wants
+the ask connected to a specific number, Day-7 retention, not a hunch or a
+vague direction. Reads the brief before the meeting rather than discussing
+cold in the room.
+
+**How to work with him:** recommendation and the number, first sentence.
+One page. Come with the ask and the deadline already attached, not open
+for him to supply.

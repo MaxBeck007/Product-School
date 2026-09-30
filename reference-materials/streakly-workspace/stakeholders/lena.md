@@ -51,3 +51,22 @@ feedback.
 conversation with Lena:** bring the actual prototype and the actual usability
 notes, not a description of them, her own pattern (research first, then
 design) means she'll want to see the evidence directly.
+
+## Insights Discovery color profile (inferred, not a real assessment)
+
+**Primary: Earth Green. Secondary: Cool Blue.**
+
+**Why Green:** her pattern is people-first, evidence-first: "That tracks
+with what I'm hearing in user research" comes *before* she ever pitches her
+own sketch. She named the existing push notification's brutal tone in
+blunt, human terms, not a metric. She wants the empty state defined so no
+real user hits a broken moment. Considerate, valuing, patient.
+
+**Why Blue as secondary, not Yellow:** she won't design from a vibe or an
+assumption, she wants to see the evidence directly before reacting, and
+pushes back hard on anything that reads like it skipped the problem
+definition. That's rigor, not enthusiasm for its own sake.
+
+**How to work with her:** bring the actual prototype and the actual
+research notes, not a summary of them. Lead with "here's what users told
+us," not with the design idea itself.

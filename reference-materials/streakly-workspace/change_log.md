@@ -532,7 +532,45 @@ instead of asking copy to close it.
 done screen, and restarted, full flow still works with no freeze button in
 the loop.
 
-**Open item carried forward:** `docs/prd.md` Story 5's acceptance criteria
-("the freeze is granted in one tap") and Open Question 3 ("auto-apply versus
-one-tap") are now stale, this entry resolves that question but the PRD text
-hasn't been updated to match yet.
+**Open item carried forward:** none, `docs/prd.md` Story 5's acceptance
+criteria and Open Question 3 were updated in this same pass to match.
+
+---
+
+## Entry 11, stakeholder color profiles added (Insights Discovery model)
+
+**Date:** 2026-09-30. Max asked for each stakeholder to get an Insights
+Discovery color profile (Cool Blue / Fiery Red / Earth Green / Sunshine
+Yellow) based on a wheel image they shared. **Label: inferred, not a real
+assessment.** No one took an actual Insights Discovery survey; these are
+Claude's read of documented behavior, sourced the same way the rest of each
+profile already is.
+
+**What happened:** added a color-profile section to each of
+`stakeholders/raj.md`, `stakeholders/lena.md`, `stakeholders/marcus.md`.
+
+- **Raj:** primary Cool Blue (analytical-before-opinion, wants acceptance
+  criteria and edge cases named upfront, async/bullet-point communicator),
+  secondary Earth Green (pushes back on disruption and scope creep, not on
+  slowness).
+- **Lena:** primary Earth Green (leads with "here's what users told us"
+  before her own design opinion, wants the empty state defined so no real
+  user hits a broken moment), secondary Cool Blue (won't design from a vibe,
+  wants to see the evidence directly).
+- **Marcus:** primary Fiery Red (wants the recommendation in the first
+  sentence, separates problem from solution on purpose, moves fast once a
+  framing is concrete), secondary Cool Blue (wants the ask connected to a
+  specific number, not a hunch).
+
+**Reasoning:** each profile's color read is tied to a specific already-
+sourced quote or behavior in that person's file, not invented from the role
+title alone (a designer doesn't have to be Yellow, an engineer doesn't have
+to be Blue, both colors here are argued from evidence already in the
+workspace).
+
+**Changes made:** three stakeholder files only. No change to
+`docs/spec-readiness.md` or `docs/design-review.md`, this doesn't retroactively
+change what roleplayed-Raj or roleplayed-Lena already said, it's a new lens
+on the same documented behavior.
+
+**Open item carried forward:** none.
