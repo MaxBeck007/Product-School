@@ -6,6 +6,13 @@
 > second-lapse behavior) exist only as discussed positions, not as anything
 > built into the prototype. That gap is exactly what several checklist items
 > below surface.
+>
+> **Re-verified 2026-09-30 after `change_log.md` Entries 7-8:** the lesson
+> track changed from guitar to miniature painting and the multiple-choice
+> quiz was replaced by a photo check-in (or skip). Rows 4, 5, and 10 tested
+> the old quiz mechanic and are rewritten below to test the current one;
+> re-run by hand against the live prototype, not just relabeled. Rows 1, 2,
+> 3, 6-9 are mechanic-independent and unchanged.
 
 ## 1. Edge case list
 
@@ -38,13 +45,13 @@
 | 1 | Handles a user with no best-streak stat (never had a streak) | **Fail** | Yes, hardcoded to show "12" always |
 | 2 | Lesson content matches the user's actual track | **Fail** (known, logged) | No for a v1 discovery test, per `docs/pm-brief.md`'s explicit assumption, but must be resolved before real launch |
 | 3 | Freeze tap shows clear confirmation | **Pass** | — |
-| 4 | Quiz doesn't penalize a wrong answer | **Pass** | — |
-| 5 | Quiz label avoids test-like framing | **Pass** | — |
+| 4 | Photo check-in doesn't block progress if skipped | **Pass** | — |
+| 5 | Check-in copy avoids test-like framing | **Pass**, with a caveat | Passes the test-like-framing check Amara's segment needed; a different, unactioned finding from Dax's review (`change_log.md` Entry 8) is that "no critique" reads as pointless, not reassuring, to a craft-serious user — not a launch blocker, a logged open question |
 | 6 | User can decline/skip the screen | **Cannot fully determine** | The button exists but only shows a placeholder alert in this static prototype, not real navigation |
 | 7 | Second lapse in the same week shows screen but no freeze (per `docs/spec-readiness.md`) | **Fail** | Yes if this rule ships as discussed, nothing in the prototype implements it |
 | 8 | Freeze offer respects the 3+ day eligibility rule (per `docs/spec-readiness.md`) | **Fail** | Yes, the prototype shows the freeze offer unconditionally |
 | 9 | Already-used freeze can't be reused | **Cannot determine / likely fail** | Yes, no such state exists in this static prototype |
-| 10 | Restarting the demo resets all UI state correctly | **Pass** | — |
+| 10 | Restarting the demo resets all UI state correctly | **Pass**, re-verified live 2026-09-30 against freeze + photo state together | — |
 
 **Read on this table:** items 1, 7, 8, and 9 are not really prototype bugs,
 they're the gap between what got *discussed* in the spec-readiness

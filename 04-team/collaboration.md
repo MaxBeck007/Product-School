@@ -26,7 +26,7 @@ A roleplayed design review (standing in for Lena) surfaced the sharpest strategi
 | Second lapse in the same week | Comeback screen still shows; freeze offer withheld per the proposed 3+ day / no-stacking rule | ☐ Fail — rule discussed, not built |
 | Freeze already used for this lapse | Freeze offer not shown again | ☐ Fail / cannot determine — no such state in a static prototype |
 | Freeze tap | Clear inline confirmation, no navigation away | ☑ Pass |
-| Comeback lesson quiz | Any answer advances; no correct/incorrect framing | ☑ Pass |
+| Comeback session check-in (photo or skip, replaced the multiple-choice quiz 2026-09-30) | Photo or skip both advance; no test-like framing | ☑ Pass, with an open caveat — Dax's persona review found "no critique" reads as pointless rather than reassuring to a craft-serious user, logged as an open question, not a blocker |
 
 **Read on this table:** the three failing rows aren't prototype bugs — they're the gap between what was *discussed* in the spec-readiness conversation and what's actually *built* in a click-through prototype. First real PR comment queued for Raj: does the freeze-eligibility check resolve before or after the offer renders if the user is offline, so an ineligible user is never briefly shown a freeze they can't actually get?
 
