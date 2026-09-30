@@ -3,8 +3,7 @@
 > **Not from course-supplied research.** Priya, Tom, and Amara
 > (`research/interview-synthesis.md`) came from interview excerpts given in
 > the P2L1 exercise. Dax did not, this persona was constructed on 2026-09-30,
-> right after the lesson track changed from guitar to miniature painting
-> (`change_log.md` Entry 7), specifically to stress-test that change with a
+> specifically to stress-test the miniature-painting comeback lesson with a
 > skeptical, hobby-fluent voice Priya/Tom/Amara can't provide. Treat every
 > reaction attributed to him as a plausible projection from the traits stated
 > below, not as real user research. Do not cite him to Marcus or Raj as if he
@@ -46,5 +45,4 @@
 3. Would you come back and restart your streak based on this?
 4. If you had a magic wand, what would you change?
 
-See `research/usability-session-2-dax.md` for his run against the current
-(post-Entry 7) prototype.
+See `research/usability-session-2-dax.md` for his run against the prototype.

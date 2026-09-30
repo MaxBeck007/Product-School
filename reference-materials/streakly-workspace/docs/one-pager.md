@@ -16,9 +16,7 @@ notification channel.
 
 **The fix and its result:** a personalized Comeback screen (best-streak stat,
 a comeback session, one-tap freeze) tested 50/50 in cohort week 5: **76% vs.
-46% Day-7 retention, 36% vs. 22% Day-30.** [The P5 pilot dataset predates the
-2026-09-30 track/mechanic change (`change_log.md` Entries 7-8); the pilot
-numbers are unaffected, only the "60-second lesson" wording is updated here.]
+46% Day-7 retention, 36% vs. 22% Day-30.**
 
 ---
 
@@ -65,7 +63,6 @@ numbers are unaffected, only the "60-second lesson" wording is updated here.]
   flags this as the number to confirm before committing to the 8-week test
   window).
 - **Track personalization** (lesson content is fixed to one example track,
-  miniature painting as of `change_log.md` Entry 7, guitar before that) is
-  still an open design decision.
+  miniature painting) is still an open design decision.
 
 ## Next: P6, Communicate Clearly

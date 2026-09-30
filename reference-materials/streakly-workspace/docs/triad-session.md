@@ -21,9 +21,8 @@ template. Nothing here records Raj's or Lena's actual positions.**
 - Show all 3 screens live: comeback entry → 60-second lesson → done/re-entry.
 - Call out both fixes already made and why (`change_log.md` Entries 1 and 2):
   removing the pass/fail quiz gate, and softening the "Quick check" label.
-- Be explicit that the miniature-painting lesson (changed from guitar,
-  `change_log.md` Entry 7) and the freeze copy are both still open items, not
-  final.
+- Be explicit that the miniature-painting lesson and the freeze copy are both
+  still open items, not final.
 
 **3. Questions for Raj (feasibility), 10 min**
 - The original Slack thread flagged two open items: "logic for who sees it" and

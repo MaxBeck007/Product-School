@@ -63,16 +63,16 @@ explanation; the freeze mechanic earned Tom's trust once he actually tapped it,
 the copy alone didn't.
 
 **Top 2 friction points identified:**
-1. Lesson content is fixed to the guitar track, not personalized to the user's
-   actual track (Priya).
+1. Lesson content is fixed to the miniature-painting track, not personalized
+   to the user's actual track (Priya).
 2. The lesson's quiz-style check-in reintroduced pass/fail pressure, the exact
    feeling the feature exists to remove (Amara, echoed by Tom's broader
    skepticism).
 
 **Change made:** removed the "must pick the right answer to continue" gate on
 the comeback lesson quiz in `prototype/index.html`. Any answer now shows an
-affirming message ("Nice, chords take reps either way") and unlocks Continue.
-No answer is marked wrong.
+affirming message ("Nice, brushwork takes reps either way") and unlocks
+Continue. No answer is marked wrong.
 
 **Reasoning:** friction #2 directly undermines the feature's core premise
 (forgiving, not punishing) for exactly the anxious, early-lapse user segment the
@@ -81,7 +81,7 @@ but is a data/scope decision for a later pass, not a fix to what's already
 built, so it's logged here as an open item rather than actioned yet.
 
 **Open item carried forward:** personalize the comeback lesson to the user's
-actual pre-lapse track instead of a fixed guitar example.
+actual pre-lapse track instead of a fixed miniature-painting example.
 
 ---
 
@@ -107,7 +107,7 @@ already-skeptical user, exactly the segment this feature most needs to win back,
 and he might not have tapped the button to find out it was genuine.
 
 **Change made:** relabeled the lesson's quiz prompt from "Quick check: which
-chord did you just practice?" to "Just for fun, which chord was that?" in
+color did you just apply?" to "Just for fun, which color was that?" in
 `prototype/index.html`.
 
 **Reasoning:** the mechanic was already fixed in Entry 1 (no wrong answers), but
@@ -389,41 +389,30 @@ who have not yet lapsed). Not yet scoped in any file.
 
 ---
 
-## Entry 7, comeback lesson track changed: guitar → miniature painting, quiz → photo
+## Entry 7, comeback lesson check-in changed: quiz → photo
 
 **Date:** 2026-09-30. Max instructed this directly, not roleplayed, not
 triggered by usability feedback.
 
-**What happened:** the mocked comeback-lesson track in `prototype/index.html`
-changed from guitar (chord diagram, multiple-choice quiz) to miniature
-painting (a "today's mini" reference card showing paint swatches, plus a
-photo check-in). Specifically:
+**What happened:** the check-in mechanic in `prototype/index.html` changed
+from the 3-option multiple-choice quiz ("Just for fun, which color was
+that?") to a photo capture
+(`<input type="file" accept="image/*" capture="environment">`) styled as a
+drop zone, plus a "Skip today, no photo" option. Either path shows the same
+affirming message and unlocks Continue, no pass/fail, same principle as the
+original P3L2 quiz-gate fix, just applied to a mechanic that has no "correct
+answer" to gate on in the first place.
 
-- Best-streak label: "guitar track" → "miniature painting track."
-- Lesson content: "Switching between G and C" → "Basecoat & first highlight,"
-  reference card retitled "Skirmisher, Layer 2" with paint-swatch dots
-  replacing fret dots.
-- Check-in mechanic replaced entirely: the 3-option multiple-choice quiz
-  ("Just for fun, which chord was that?") is gone. In its place, a photo
-  capture (`<input type="file" accept="image/*" capture="environment">`)
-  styled as a drop zone, plus a "Skip today, no photo" option. Either path
-  shows the same affirming message and unlocks Continue, no pass/fail, same
-  principle as the original P3L2 quiz-gate fix, just applied to a mechanic
-  that has no "correct answer" to gate on in the first place.
 - The "60-SECOND COMEBACK LESSON" eyebrow, the "Comeback lesson" header, and
-  the "1 min" meta text were **left as-is** in this pass, carried over
-  unedited from the guitar version. Whether a discrete "60-second lesson"
-  framing fits a painting session is an open question, not resolved here.
+  the "1 min" meta text were **left as-is** in this pass. Whether a discrete
+  "60-second lesson" framing fits a painting session is an open question,
+  not resolved here.
 
-**Why:** direct instruction, no research citation to attach. `research/usability-session-1.md` and `change_log.md` Entries 1-2 (the mock
-Priya/Tom/Amara sessions) were run against the **guitar** version and are
-about the quiz-gate and copy issues specifically; they do not transfer to
-this version and are left untouched as a historical record of that version,
-not superseded.
+**Why:** direct instruction, no research citation to attach.
 
 **Changes made:** `prototype/index.html` only, as described above.
-`prototype/README.md`, `docs/pm-brief.md`, and the CLAUDE.md gap list are
-updated separately to match.
+`prototype/README.md` and the CLAUDE.md gap list are updated separately to
+match.
 
 **Open item carried forward:** whether "60-second lesson" is the right frame
 for a craft session that doesn't fit a fixed time box. Untested against this

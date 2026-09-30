@@ -194,10 +194,8 @@ someone else.
   documented but not answered.
 - **Freeze eligibility rule** (one per lapse, streaks 3+ days, no stacking)
   is a discussed position only, not validated and not in the prototype.
-- **Lesson content is fixed to one track**, not personalized to the user's
-  actual track. The mocked track changed 2026-09-30 from guitar to miniature
-  painting (`change_log.md` Entry 7); this is still a fixed example, not
-  personalization, whichever track it is.
+- **Lesson content is fixed to one track (miniature painting)**, not
+  personalized to the user's actual track.
 - **Whether the freeze should self-resolve** rather than require a tap. Tom's
   skepticism was not resolved by copy alone. Changes the mechanic, so it is a
   product decision.

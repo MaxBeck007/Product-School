@@ -7,12 +7,10 @@
 > built into the prototype. That gap is exactly what several checklist items
 > below surface.
 >
-> **Re-verified 2026-09-30 after `change_log.md` Entries 7-8:** the lesson
-> track changed from guitar to miniature painting and the multiple-choice
-> quiz was replaced by a photo check-in (or skip). Rows 4, 5, and 10 tested
-> the old quiz mechanic and are rewritten below to test the current one;
-> re-run by hand against the live prototype, not just relabeled. Rows 1, 2,
-> 3, 6-9 are mechanic-independent and unchanged.
+> **Re-verified 2026-09-30 after `change_log.md` Entry 7:** the check-in
+> mechanic is a photo capture (or skip), not a multiple-choice quiz. Rows 4,
+> 5, and 10 test that mechanic, re-run by hand against the live prototype,
+> not just relabeled.
 
 ## 1. Edge case list
 

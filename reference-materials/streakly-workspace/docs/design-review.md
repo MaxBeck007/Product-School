@@ -38,7 +38,8 @@ Lena's view.**
   exactly what I'd expect an app to say right before it asks me to pay." Copy
   alone didn't resolve this until he actually tapped the button.
 - **Track personalization.** (Mock usability, Priya): "I'm on the language
-  track... doesn't quite know who I am." The lesson is fixed to guitar.
+  track... doesn't quite know who I am." The lesson is fixed to miniature
+  painting.
 
 ---
 

@@ -6,8 +6,8 @@ user research.**
 # Usability Session 2, Comeback Screen Prototype (Miniature Painting track), Dax
 
 > **Method note:** run against `prototype/index.html` as it stood right after
-> `change_log.md` Entry 7 (guitar → miniature painting, quiz → photo), before
-> any fix from this session. Same 4 questions as `research/usability-session-1.md`
+> `change_log.md` Entry 7 (quiz → photo check-in), before any fix from this
+> session. Same 4 questions as `research/usability-session-1.md`
 > (P3L2/P3L2a format), one persona this time, chosen specifically because
 > Priya/Tom/Amara have no reason to react to hobby-craft authenticity and Dax
 > does.
@@ -46,7 +46,7 @@ Two, do something with the photo besides swallow it. Even just, show it to me ne
 
 **What Dax struggled with:** trusting that the app understands the craft it's asking him to do, not trusting the emotional safety of the mechanic (that's Amara's and Tom's struggle, not his). Two concrete tells: "Layer 2" used loosely, and a fixed "60-second lesson" time box that doesn't fit how painting actually works.
 
-**What surprised me:** his objection to "no critique" is close to the opposite of what softened the copy for Amara and Tom in the guitar version. For them, removing evaluation removed pressure. For Dax, removing evaluation removed value, the whole reason a craft hobbyist photographs their work is to invite a look. Same copy choice lands as reassurance for one segment and as emptiness for another. That's a real tension in trying to serve both with one line of copy, not a bug in either reaction.
+**What surprised me:** his objection to "no critique" is close to the opposite of what softened the copy for Amara and Tom. For them, removing evaluation removed pressure. For Dax, removing evaluation removed value, the whole reason a craft hobbyist photographs their work is to invite a look. Same copy choice lands as reassurance for one segment and as emptiness for another. That's a real tension in trying to serve both with one line of copy, not a bug in either reaction.
 
 **Most concerning answer:** the "60-second lesson" framing, not the critique point. It's the more fixable one right now (a labeling mismatch, not a missing feature), and it's the one that actively damages trust in the rest of the content ("now I'm wondering if whoever built this actually paints"), which is a worse failure mode than a single missing feature: it makes him doubt every other detail on the screen, not just the time claim.
 
