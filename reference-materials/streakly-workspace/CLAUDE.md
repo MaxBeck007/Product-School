@@ -49,9 +49,9 @@ Discovery. No committed scope. The recommendation is **not** "ship it," it is
 "run a properly powered confirmatory test first" (`docs/one-pager.md`,
 `docs/recommendation-memo.md`).
 
-- **Direction:** the Comeback screen, best-streak stat, 60-second lesson,
-  one-tap freeze. Chosen over status quo and notification-only fixes
-  (`docs/decision-brief.md`).
+- **Direction:** the Comeback screen, best-streak stat, a comeback session,
+  a pre-applied streak freeze (no tap, `change_log.md` Entry 10). Chosen
+  over status quo and notification-only fixes (`docs/decision-brief.md`).
 - **Evidence for it:** pilot 76% vs 46% Day-7, n=50/variant, p=0.0021 by
   two-proportion z-test, cross-checked p=0.0038 Fisher's exact
   (`data/experiment-design.md`). Treatment open rate climbed 28% → 56% across
@@ -60,9 +60,9 @@ Discovery. No committed scope. The recommendation is **not** "ship it," it is
   lift needs ≈1,568/variant (≈3,136 total), which needs ≈392 eligible users
   per week to fit 8 weeks. **That weekly volume is unconfirmed** and is the
   single biggest open input.
-- **Built:** click-through prototype only (`prototype/index.html`), two copy
-  fixes already made from persona testing (`change_log.md` entries 1-2).
-  Freeze eligibility is a discussed position, not built.
+- **Built:** click-through prototype only (`prototype/index.html`), iterated
+  through Entries 1-2 and 7-10 from persona testing and the real P3L4 triad
+  session. Freeze eligibility is a discussed position, not built.
 
 ## Where to look for what
 | Need | File |
@@ -178,13 +178,15 @@ someone else.
   click-through prototype. The P5 dataset assumes the experiment already ran.
   Do not let a reader hit both framings without warning
   (`docs/capstone-session.md` F1).
-- **Reactive-only scope gap:** the Comeback screen reaches users only *after*
-  a lapse, but Day-7 retention measures a population that includes users who
-  are anxious and have not lapsed yet (Amara, day 4). A reactive-only fix
-  structurally cannot reach them, so part of the metric this feature is
-  accountable for is outside its reach by design. Either a named non-goal or a
-  scope expansion, currently undecided (`docs/design-review.md` Part 3,
-  `docs/prd.md` Open Question 8).
+- **Reactive-only scope gap, resolved 2026-09-30:** the Comeback screen
+  reaches users only *after* a lapse, but Day-7 retention measures a
+  population that includes users who are anxious and have not lapsed yet
+  (Amara, day 4). Max decided to expand scope rather than name this a
+  non-goal (`change_log.md` Entry 6, `docs/design-review.md` Part 3,
+  `docs/prd.md` Open Question 8). **New open item this creates:** the
+  proactive/anticipatory piece itself, mechanic, trigger, and metric, is not
+  yet designed. Treat "Comeback experience" from here on as reactive screen +
+  an undesigned proactive piece, not the reactive screen alone.
 - **Notification-independent trigger unanswered:** how a user who already
   turned notifications off ever sees the feature meant to win them back.
   Judged the objection most likely to stall the initiative
@@ -192,8 +194,8 @@ someone else.
   documented but not answered.
 - **Freeze eligibility rule** (one per lapse, streaks 3+ days, no stacking)
   is a discussed position only, not validated and not in the prototype.
-- **Lesson content is fixed to the guitar track**, not personalized to the
-  user's actual track.
+- **Lesson content is fixed to one track (miniature painting)**, not
+  personalized to the user's actual track.
 - **Whether the freeze should self-resolve** rather than require a tap. Tom's
   skepticism was not resolved by copy alone. Changes the mechanic, so it is a
   product decision.

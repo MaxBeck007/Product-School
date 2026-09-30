@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Streakly, Comeback Screen Prototype</title>
+<title>Streakly, Comeback Screen Prototype (Miniature Painting track)</title>
 <style>
   :root {
     --bg: #0f1115;
@@ -149,21 +149,23 @@
   .progress-track { height: 6px; background: #eee; border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
   .progress-fill { height: 100%; width: 15%; background: var(--accent); border-radius: 4px; transition: width .4s ease; }
 
-  .chord-diagram {
+  .session-ref {
     background: #17181c; border-radius: 16px; padding: 24px; text-align: center; color: white; margin-bottom: 18px;
   }
-  .chord-diagram .chord-name { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
-  .chord-diagram .chord-sub { font-size: 12px; color: #a9adb6; }
-  .frets { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
-  .fret-dot { width: 26px; height: 26px; border-radius: 50%; background: #2c2e35; border: 2px solid #454852; }
-  .fret-dot.active { background: var(--accent); border-color: var(--accent); }
+  .session-ref .ref-title { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+  .session-ref .ref-sub { font-size: 12px; color: #a9adb6; }
+  .swatches { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+  .swatch-dot { width: 26px; height: 26px; border-radius: 50%; background: #2c2e35; border: 2px solid #454852; }
+  .swatch-dot.active { border-color: transparent; }
 
-  .quiz-q { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
-  .option {
-    border: 1.5px solid #e5e6ea; border-radius: 12px; padding: 13px 14px;
-    font-size: 14px; margin-bottom: 10px; cursor: pointer;
+  .quiz-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .photo-drop {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; border: 1.5px dashed #d8dae0; border-radius: 14px; padding: 26px 14px;
+    margin: 10px 0 10px; cursor: pointer; color: var(--muted); font-size: 13px; font-weight: 600;
   }
-  .option.correct { border-color: var(--success); background: #f2fbf5; }
+  .photo-drop #photo-drop-icon { font-size: 26px; }
+  .photo-drop.has-photo { border-color: var(--success); background: #f2fbf5; color: var(--ink); }
 
   /* Done/celebration screen */
   .done-screen { display: none; text-align: center; padding-top: 40px; }
@@ -197,38 +199,32 @@
       <div class="flame">🔥</div>
       <div>
         <div class="num">12</div>
-        <div class="label">Your best streak, guitar track</div>
+        <div class="label">Your best streak, miniature painting track</div>
       </div>
     </div>
 
-    <div id="toast-freeze" class="toast">
-      <span>✓</span>
-      <span>Streak freeze applied, your best streak is protected while you get back in.</span>
-    </div>
-
     <div class="lesson-card">
-      <div class="eyebrow">60-second comeback lesson</div>
+      <div class="eyebrow">Today's comeback session</div>
       <div class="row">
-        <div class="icon">🎸</div>
+        <div class="icon">🎨</div>
         <div>
-          <div class="lesson-title">Switching between G and C</div>
-          <div class="lesson-meta">Guitar · 1 min · Pick up right where you left off</div>
+          <div class="lesson-title">Basecoat &amp; first highlight</div>
+          <div class="lesson-meta">Miniature painting · Pick up right where you left off</div>
         </div>
       </div>
     </div>
 
     <div class="freeze-card" id="freeze-offer">
       <div class="row">
-        <div class="icon">🛡️</div>
+        <div class="icon">🛡️✓</div>
         <div>
-          <div class="freeze-title">One-tap streak freeze</div>
-          <div class="freeze-copy">Protect the 12-day best you already built while you ease back in. No cost, no catch.</div>
+          <div class="freeze-title">Streak freeze applied</div>
+          <div class="freeze-copy">Your 12-day best is protected while you ease back in. Already done, nothing to tap.</div>
         </div>
       </div>
     </div>
 
-    <button class="btn btn-primary" onclick="startLesson()">Start the 1-minute lesson</button>
-    <button class="btn btn-secondary" id="freeze-btn" onclick="applyFreeze()">Apply streak freeze</button>
+    <button class="btn btn-primary" onclick="startLesson()">Start today's session</button>
     <button class="btn btn-ghost" onclick="alert('In the real app this would return to the standard home screen.')">Not now, take me to my home screen</button>
 
     <div class="caption">Screen 1 of 3 · Comeback entry point</div>
@@ -238,34 +234,38 @@
   <div class="screen lesson-screen" id="screen-lesson">
     <div class="status-bar"><span>9:41</span><span>●●●●</span></div>
     <div class="header">
-      <div class="badge">🎸</div>
+      <div class="badge">🎨</div>
       <div>
-        <div class="title">Comeback lesson</div>
-        <div class="sub">Switching between G and C</div>
+        <div class="title">Comeback session</div>
+        <div class="sub">Basecoat &amp; first highlight</div>
       </div>
     </div>
 
     <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
 
-    <div class="chord-diagram">
-      <div class="chord-name">G major</div>
-      <div class="chord-sub">Place your fingers, then strum down slowly</div>
-      <div class="frets">
-        <div class="fret-dot active"></div>
-        <div class="fret-dot"></div>
-        <div class="fret-dot active"></div>
-        <div class="fret-dot active"></div>
+    <div class="session-ref">
+      <div class="ref-title">Skirmisher, Layer 2</div>
+      <div class="ref-sub">Basecoat is dry, add one highlight layer on the raised edges</div>
+      <div class="swatches">
+        <div class="swatch-dot active" style="background:#8a3b2b;"></div>
+        <div class="swatch-dot active" style="background:#d97a3f;"></div>
+        <div class="swatch-dot"></div>
+        <div class="swatch-dot"></div>
       </div>
     </div>
 
-    <div class="quiz-q">Just for fun, which chord was that?</div>
-    <div class="option" onclick="selectAnswer(this)">C major</div>
-    <div class="option" onclick="selectAnswer(this)">G major</div>
-    <div class="option" onclick="selectAnswer(this)">D major</div>
-    <div id="quiz-affirm" class="lesson-meta" style="display:none; margin: -4px 0 14px; color: var(--success); font-weight:600;">Nice, chords take reps either way. Let's keep going.</div>
+    <div class="quiz-q">Snap today's progress</div>
+    <p class="lesson-meta" style="margin: 0 0 4px;">A quick photo, no critique, just a record you showed up today.</p>
+    <label class="photo-drop" for="photo-input" id="photo-drop">
+      <span id="photo-drop-icon">📷</span>
+      <span id="photo-drop-text">Take or upload a photo</span>
+    </label>
+    <input type="file" id="photo-input" accept="image/*" capture="environment" style="display:none" onchange="handlePhoto(this)">
+    <button class="btn btn-ghost" style="margin-top:-6px;" onclick="skipPhoto()">Skip today, no photo</button>
+    <div id="quiz-affirm" class="lesson-meta" style="display:none; margin: 10px 0 14px; color: var(--success); font-weight:600;">Nice, that's today logged either way.</div>
 
     <button class="btn btn-primary" id="lesson-continue" onclick="finishLesson()" disabled style="opacity:.4;">Continue</button>
-    <div class="caption">Screen 2 of 3 · Mocked lesson content, not wired to the real lesson engine. No wrong answers, every pick moves you forward.</div>
+    <div class="caption">Screen 2 of 3 · Mocked lesson content, not wired to a real camera roll or lesson engine. No pass/fail, a photo or a skip both move you forward.</div>
   </div>
 
   <!-- SCREEN 3: Done -->
@@ -285,11 +285,21 @@
     document.getElementById('screen-lesson').classList.add('show');
     setTimeout(() => { document.getElementById('progress').style.width = '100%'; }, 100);
   }
-  function selectAnswer(el) {
-    // No right or wrong here on purpose: the comeback lesson never blocks or
-    // penalizes an answer. See change_log.md, P3L2 fix.
-    document.querySelectorAll('.option').forEach(o => o.classList.remove('correct'));
-    el.classList.add('correct');
+  // No pass/fail here on purpose: a photo or a skip both count as showing up.
+  // See change_log.md, P3L2 fix (original quiz-gate) and Entry 7 (photo swap).
+  function handlePhoto(input) {
+    const drop = document.getElementById('photo-drop');
+    if (input.files && input.files[0]) {
+      drop.classList.add('has-photo');
+      document.getElementById('photo-drop-icon').textContent = '✅';
+      document.getElementById('photo-drop-text').textContent = input.files[0].name;
+    }
+    showAffirm();
+  }
+  function skipPhoto() {
+    showAffirm();
+  }
+  function showAffirm() {
     document.getElementById('quiz-affirm').style.display = 'block';
     const btn = document.getElementById('lesson-continue');
     btn.disabled = false;
@@ -299,28 +309,20 @@
     document.getElementById('screen-lesson').classList.remove('show');
     document.getElementById('screen-done').classList.add('show');
   }
-  function applyFreeze() {
-    document.getElementById('toast-freeze').classList.add('show');
-    const btn = document.getElementById('freeze-btn');
-    btn.textContent = 'Streak freeze applied ✓';
-    btn.disabled = true;
-    btn.style.opacity = .6;
-  }
   function restart() {
     document.getElementById('screen-done').classList.remove('show');
     document.getElementById('screen-comeback').classList.remove('hide');
     document.getElementById('screen-lesson').classList.remove('show');
     document.getElementById('progress').style.width = '0%';
-    document.querySelectorAll('.option').forEach(o => o.classList.remove('correct'));
     document.getElementById('quiz-affirm').style.display = 'none';
     const lessonBtn = document.getElementById('lesson-continue');
     lessonBtn.disabled = true;
     lessonBtn.style.opacity = .4;
-    const freezeBtn = document.getElementById('freeze-btn');
-    freezeBtn.textContent = 'Apply streak freeze';
-    freezeBtn.disabled = false;
-    freezeBtn.style.opacity = 1;
-    document.getElementById('toast-freeze').classList.remove('show');
+    const drop = document.getElementById('photo-drop');
+    drop.classList.remove('has-photo');
+    document.getElementById('photo-drop-icon').textContent = '📷';
+    document.getElementById('photo-drop-text').textContent = 'Take or upload a photo';
+    document.getElementById('photo-input').value = '';
   }
 </script>
 

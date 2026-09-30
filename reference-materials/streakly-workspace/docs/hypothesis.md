@@ -20,8 +20,9 @@
 
 ## What we're assuming
 
-- **Assumption:** a mocked, single-track lesson (guitar) is a fair stand-in for
-  what a fully personalized, track-matched lesson would do in production.
+- **Assumption:** a mocked, single-track lesson (miniature painting) is a fair
+  stand-in for what a fully personalized, track-matched lesson would do in
+  production.
 - **Assumption:** a simple, free, one-tap streak-freeze grant is the right
   version of the mechanic to test; the real eligibility and expiry rules are
   still an open item Raj flagged and are not resolved here.
@@ -43,6 +44,6 @@
 ## Hypothesis Statement
 
 We believe that a personalized Comeback screen, showing a user's best-streak
-stat, a low-pressure 60-second comeback lesson, and a one-tap streak-freeze, will
+stat, a low-pressure comeback session, and a pre-applied streak-freeze, will
 deliver renewed engagement after a broken streak for Streakly users in their
 first 7 days, as measured by Day-7 retention rate.

@@ -20,7 +20,7 @@ the sample is too small to commit to a full rollout on its own.
 
 We shipped the Comeback screen as a 50/50 experiment to 100 users in cohort
 week 5, testing whether a forgiving, personalized re-entry moment (best-streak
-stat, 60-second lesson, one-tap freeze) recovers users after they break a
+stat, a comeback session, a pre-applied freeze) recovers users after they break a
 streak.
 
 ## Evidence

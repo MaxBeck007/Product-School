@@ -26,9 +26,9 @@ Same 4 questions asked of all three:
    what I remember."
 2. "I'd probably land here if I missed a day traveling, that's the only way I'd
    ever see this."
-3. Yes, but flagged: "the lesson is guitar, I'm on the language track, so this
-   version wouldn't actually be my lesson. If it's supposed to be personalized it
-   should know what I was doing before I lapsed."
+3. Yes, but flagged: "the lesson is miniature painting, I'm on the language
+   track, so this version wouldn't actually be my lesson. If it's supposed to
+   be personalized it should know what I was doing before I lapsed."
 4. "Make the lesson match whatever track I was actually on."
 
 ## Tom (churned, broke a 12-day streak)
@@ -72,9 +72,10 @@ Same 4 questions asked of all three:
 
 ### Top 2 friction points
 
-1. **The lesson content is fixed to one track (guitar), not personalized to the
-   user's actual track.** Raised directly by Priya; undermines the
-   "personalized" promise of the feature for anyone not on that track.
+1. **The lesson content is fixed to one track (miniature painting), not
+   personalized to the user's actual track.** Raised directly by Priya;
+   undermines the "personalized" promise of the feature for anyone not on
+   that track.
 2. **The quiz-style check-in reintroduces exactly the pressure the feature is
    supposed to remove.** Raised directly by Amara, and echoes Tom's broader
    skepticism about being tested or penalized. This is the more serious issue:

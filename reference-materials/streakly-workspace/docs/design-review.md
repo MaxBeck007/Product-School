@@ -38,7 +38,8 @@ Lena's view.**
   exactly what I'd expect an app to say right before it asks me to pay." Copy
   alone didn't resolve this until he actually tapped the button.
 - **Track personalization.** (Mock usability, Priya): "I'm on the language
-  track... doesn't quite know who I am." The lesson is fixed to guitar.
+  track... doesn't quite know who I am." The lesson is fixed to miniature
+  painting.
 
 ---
 
@@ -65,6 +66,10 @@ interaction, this is already an open item from `change_log.md` Entry 2 and
 one of the questions queued for Raj in `docs/triad-session.md`, whether a
 pre-applied, already-resolved freeze is feasible instead of the current
 one-tap version.
+
+**Resolved 2026-09-30 (`change_log.md` Entries 9-10):** the real P3L4 triad
+session decided pre-applied, Raj confirmed it's less implementation work,
+not more. Implemented in `prototype/index.html`.
 
 **Lena:** This only exists after someone already breaks a streak. Amara told
 us she's anxious from day 4, before anything's broken. Is "not yet addressed"
@@ -100,3 +105,9 @@ proactive moment is a product/roadmap call (PM and Marcus), not a design
 call. Lena's domain is the tone and interaction craft within whatever screens
 get built, e.g., how the freeze resolves, how the lesson is framed, not
 whether a new screen gets added to the roadmap.
+
+**Resolved 2026-09-30 (`change_log.md`, Entry 6; `docs/prd.md` Open Question
+8):** Max made the call, scope expands to include a proactive piece for
+not-yet-lapsed anxious users. Not roleplayed, not Lena's decision to make, and
+still undesigned, this closes which of the two options, not the design work
+itself.

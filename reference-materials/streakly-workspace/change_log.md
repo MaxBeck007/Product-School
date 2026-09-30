@@ -1,9 +1,51 @@
 # Streakly, Comeback Experience: Change Log
 
 > Note: this file was meant to be initialized in P1L4 (part of the three core
-> files). We skipped ahead to P2/P3 before that lesson ran, so this is the first
-> entry rather than day 1 of discovery. P1L4 is still open if you want to
-> backfill `project.md` and `strategy.md` alongside it.
+> files). We skipped ahead to P2/P3 before that lesson ran, so Entry 1 below was
+> originally the first entry rather than day 1 of discovery. **Backfilled
+> 2026-09-30:** Entry 0 now logs that day-1 kickoff. Per `workspace-audit.md`
+> §3 (R9 / "deliberately not recommended"), `project.md` and `strategy.md` are
+> staying unbuilt as separate files, Max confirmed on 2026-09-30 that the
+> content already living in `CLAUDE.md`, `docs/decision-brief.md`, and
+> `docs/hypothesis.md` should stay the one source rather than adding two more
+> places for the same facts to drift.
+
+---
+
+## Entry 0 (backfilled), P1L4, day 1 of discovery logged
+
+**Date of the work being logged:** 2026-09-28 (P1, the original session).
+**Entry written:** 2026-09-30, closing the specific P1L4 gap named in this
+file's header note and in `workspace-audit.md`'s artifact map ("P1L4 →
+`change_log.md`, partial"). Reconstructed from `project-skeleton.md`,
+`CLAUDE.md`, and `docs/decision-brief.md`, not from session notes.
+
+**What happened:** day 1 of discovery for the Streakly Comeback experience.
+Role and squad confirmed: PM, Engagement squad; triad is Raj (Senior Engineer)
+and Lena (Product Designer); reports to Marcus, Head of Product
+(`project-skeleton.md` Participants table). Current phase: discovery, no
+committed scope, 8 weeks from sprint kickoff.
+
+**The hypothesis logged today:** users go passive after breaking a streak
+because the reset feels like failure with no graceful way back in, not because
+the daily lessons are bad. The bet under discovery: a personalized Comeback
+screen (best-streak stat, 60-second comeback lesson, one-tap streak-freeze),
+in place of the current cold reset-to-zero (`project-skeleton.md` "Solution
+direction discussed, not committed").
+
+**Key tension carried into every future session:** re-engagement nudges vs.
+notification fatigue, users who feel nagged turn notifications off entirely,
+closing the one channel that could otherwise win them back after a lapse
+(`CLAUDE.md`).
+
+**Changes made:** none, this entry documents kickoff, it does not action
+anything.
+
+**Open item carried forward:** the four questions `project-skeleton.md` left
+open, whether the root cause is the reset, notification timing, or both;
+who qualifies for a comeback experience and what the freeze rules are; what
+Day-7 target counts as success and by when; whether notification tone/cadence
+is in scope. All four were still open as of the 2026-09-30 backfill.
 
 ---
 
@@ -21,16 +63,16 @@ explanation; the freeze mechanic earned Tom's trust once he actually tapped it,
 the copy alone didn't.
 
 **Top 2 friction points identified:**
-1. Lesson content is fixed to the guitar track, not personalized to the user's
-   actual track (Priya).
+1. Lesson content is fixed to the miniature-painting track, not personalized
+   to the user's actual track (Priya).
 2. The lesson's quiz-style check-in reintroduced pass/fail pressure, the exact
    feeling the feature exists to remove (Amara, echoed by Tom's broader
    skepticism).
 
 **Change made:** removed the "must pick the right answer to continue" gate on
 the comeback lesson quiz in `prototype/index.html`. Any answer now shows an
-affirming message ("Nice, chords take reps either way") and unlocks Continue.
-No answer is marked wrong.
+affirming message ("Nice, brushwork takes reps either way") and unlocks
+Continue. No answer is marked wrong.
 
 **Reasoning:** friction #2 directly undermines the feature's core premise
 (forgiving, not punishing) for exactly the anxious, early-lapse user segment the
@@ -39,7 +81,7 @@ but is a data/scope decision for a later pass, not a fix to what's already
 built, so it's logged here as an open item rather than actioned yet.
 
 **Open item carried forward:** personalize the comeback lesson to the user's
-actual pre-lapse track instead of a fixed guitar example.
+actual pre-lapse track instead of a fixed miniature-painting example.
 
 ---
 
@@ -65,7 +107,7 @@ already-skeptical user, exactly the segment this feature most needs to win back,
 and he might not have tapped the button to find out it was genuine.
 
 **Change made:** relabeled the lesson's quiz prompt from "Quick check: which
-chord did you just practice?" to "Just for fun, which chord was that?" in
+color did you just apply?" to "Just for fun, which color was that?" in
 `prototype/index.html`.
 
 **Reasoning:** the mechanic was already fixed in Entry 1 (no wrong answers), but
@@ -310,3 +352,187 @@ personalization, freeze self-resolution, notification-independent trigger
 volume, and the missing P5 source CSVs. Deferred from `workspace-audit.md`:
 R1 `open-items.md`, R3 `docs/definitions.md`, R4 stakeholder template and a
 profile for Max, and the R6-R8 file moves.
+
+---
+
+## Entry 6, reactive-only scope decision made
+
+**Date:** 2026-09-30. Max decided, reviewing `docs/design-review.md` Part 3 and
+`docs/prd.md` Open Question 8 directly (this was not roleplayed).
+
+**What happened:** `docs/design-review.md` Part 3 named the sharpest unresolved
+strategic gap in the workspace: the Comeback screen only reaches a user *after*
+they lapse, but Day-7 retention measures a population that also includes
+anxious, not-yet-lapsed users (Amara's profile, day 4). `docs/prd.md` Open
+Question 8 named the same gap and left it as a choice between two options:
+name it a non-goal and accept the ceiling, or scope a proactive piece as
+parallel work. It was logged as "currently neither," undecided.
+
+**Decision made: expand scope.** The Comeback experience will include a
+proactive, anticipatory piece for users who are anxious but have not yet
+broken a streak, alongside the existing reactive Comeback screen for users who
+have. This is a real scope decision, not a roleplay output.
+
+**What this decision does not do:** it does not yet define what the proactive
+piece is. No mechanic, screen, or trigger has been specified. That is new,
+unstarted work, not a detail filled in here.
+
+**Changes made:** none to the prototype, PRD text, or design review content
+itself. `docs/prd.md` Open Question 8 and `docs/design-review.md` Part 3 each
+get a short resolution note pointing to this entry rather than being rewritten,
+so the original roleplayed reasoning that led here stays intact and readable.
+
+**Open item carried forward, new:** define the proactive/anticipatory
+intervention, mechanic, trigger, and how it's measured (likely a leading
+indicator distinct from Day-7 retention, since by definition it targets users
+who have not yet lapsed). Not yet scoped in any file.
+
+---
+
+## Entry 7, comeback lesson check-in changed: quiz → photo
+
+**Date:** 2026-09-30. Max instructed this directly, not roleplayed, not
+triggered by usability feedback.
+
+**What happened:** the check-in mechanic in `prototype/index.html` changed
+from the 3-option multiple-choice quiz ("Just for fun, which color was
+that?") to a photo capture
+(`<input type="file" accept="image/*" capture="environment">`) styled as a
+drop zone, plus a "Skip today, no photo" option. Either path shows the same
+affirming message and unlocks Continue, no pass/fail, same principle as the
+original P3L2 quiz-gate fix, just applied to a mechanic that has no "correct
+answer" to gate on in the first place.
+
+- The "60-SECOND COMEBACK LESSON" eyebrow, the "Comeback lesson" header, and
+  the "1 min" meta text were **left as-is** in this pass. Whether a discrete
+  "60-second lesson" framing fits a painting session is an open question,
+  not resolved here.
+
+**Why:** direct instruction, no research citation to attach.
+
+**Changes made:** `prototype/index.html` only, as described above.
+`prototype/README.md` and the CLAUDE.md gap list are updated separately to
+match.
+
+**Open item carried forward:** whether "60-second lesson" is the right frame
+for a craft session that doesn't fit a fixed time box. Untested against this
+version. See Entry 8 for a first read on this from a new persona.
+
+---
+
+## Entry 8, P3L2a rerun with a new persona (Dax), one fix made
+
+**Date:** 2026-09-30. **Label: mock/illustrative.** Dax (`personas/dax.md`) is
+a constructed persona, not a real user. Full transcript:
+`research/usability-session-2-dax.md`.
+
+**What happened:** ran the standard 4 P3L2/P3L2a questions against
+`prototype/index.html` as it stood after Entry 7, in character as Dax, a
+competitive tabletop wargamer built specifically to stress-test the new
+miniature-painting content with hobby-fluent skepticism Priya/Tom/Amara can't
+provide.
+
+**What was working:** the best-streak stat carrying over (not resetting) and
+the streak-freeze both landed with him as they did for the other personas.
+The reference card's instruction text ("basecoat is dry, add one highlight
+layer") read as authentic, not invented-sounding.
+
+**Top 2 friction points:**
+1. **"60-second lesson" framing doesn't fit the craft.** Painting requires
+   dry time between coats; a fixed time box reads as evidence the app doesn't
+   actually understand the hobby, which damages trust in everything else on
+   the screen, not just the time claim.
+2. **"No critique" reads as pointless, not reassuring, to this segment.** The
+   copy that removes pressure for Amara removes the entire point of
+   photographing progress for Dax, a craft hobbyist expects a photo to be
+   looked at. Same line, opposite effect depending on the user, an echo of
+   the same-mechanic-opposite-effect pattern the original interview synthesis
+   found in Priya vs. Tom/Amara (`research/interview-synthesis.md`,
+   Contradictions).
+
+**Change made:** dropped the "60-second lesson" time-box framing. "60-SECOND
+COMEBACK LESSON" → "Today's comeback session," "Comeback lesson" header →
+"Comeback session," removed "1 min" from the lesson-card meta line, and the
+primary CTA "Start the 1-minute lesson" → "Start today's session" (missed on
+the first pass, same mismatch Dax named, caught on review). Fix #2 (the "no
+critique" tension) was **not** actioned, see below.
+
+**Reasoning:** fix #1 is a labeling mismatch, low-risk, matches the class of
+fix already used for the original quiz-gate/label corrections (Entries 1-2).
+Fix #2 is a segmentation question, does this screen serve craft-serious users
+differently than anxious early-lapse users, not something a copy tweak
+resolves, and picking a resolution here would be inventing a product
+decision Dax's feedback alone doesn't settle.
+
+**Open item carried forward:** the "no critique" tension (friction #2) is
+unresolved. Whether the Comeback screen needs to know which kind of user it's
+talking to, or whether one forgiving default is an acceptable tradeoff across
+segments, is a real open product question, not decided in this entry.
+
+---
+
+## Entry 9, P3L4 triad session run for real (Max, Raj, Lena), roleplayed
+
+**Date:** 2026-09-30. **Label: fully roleplayed, not a real meeting.** Full
+transcript: `docs/triad-session-transcript.md`. All three voices, including
+Max, generated by Claude at Max's explicit request. Follows the actual
+`docs/triad-session.md` agenda exactly, same attendees as scripted (Raj,
+Lena, PM), no additions.
+
+**What happened:** ran the P3L4 exercise end to end instead of leaving it as
+a prepared-but-unheld agenda. Walked the prototype, ran Raj's 3 feasibility
+questions and Lena's 3 experience questions exactly as drafted, and reached
+real decisions on the "Decisions to walk out with" list.
+
+**Decisions made:**
+1. **Personalization:** ship the single miniature-painting example for the
+   first test; personalizing to the user's actual pre-lapse track becomes
+   its own ticket, not a blocker.
+2. **Freeze interaction:** switch from one-tap to pre-applied/auto-resolved,
+   shown as already done. Raj's read: this is *less* implementation work,
+   not more, the eligibility check already has to run server-side before
+   the screen renders. Directly answers Tom's mock-feedback skepticism from
+   Entry 2, tap-and-trust never fully earned his trust.
+3. **Empty state:** confirmed undesigned, scheduled before the next round of
+   testing (not before this review, not indefinitely deferred). Owner: Lena.
+
+**New, undecided flag from Lena:** whether "no critique" on the photo
+check-in reads as dismissive to a user who'd want feedback, not just as
+reassuring to an anxious one. No evidence either way yet, not resolved here.
+
+**Change made:** filled in `docs/triad-session.md`'s Post-Session Alignment
+Doc template with the decisions above. Decision 2 (freeze mechanic)
+implemented, see Entry 10.
+
+**Open item carried forward:** decision 1 (personalization ticket) and
+decision 3 (empty-state design) are scheduling commitments, not yet
+executed. Lena's "no critique" flag is unresolved.
+
+---
+
+## Entry 10, freeze mechanic changed: one-tap → pre-applied
+
+**Date:** 2026-09-30. Implements the Entry 9 triad decision, not roleplayed
+itself.
+
+**What happened:** in `prototype/index.html`, the freeze offer no longer
+requires a tap. The "Apply streak freeze" button and its confirmation toast
+are gone; the freeze card now renders already resolved ("Streak freeze
+applied... Already done, nothing to tap.") as soon as the comeback screen
+loads. `applyFreeze()` and the toast element were removed; `restart()`
+updated to match (no freeze-button state to reset).
+
+**Why:** Entry 9, Raj's read that pre-applied is less state to manage than
+one-tap, and it directly answers Tom's persistent skepticism (Entry 2) that
+copy alone, "no cost, no catch," never earned his trust, only seeing the
+mechanic resolve did. Pre-applied removes the tap-then-trust gap entirely
+instead of asking copy to close it.
+
+**Verified live:** started the lesson, skipped the photo, finished to the
+done screen, and restarted, full flow still works with no freeze button in
+the loop.
+
+**Open item carried forward:** `docs/prd.md` Story 5's acceptance criteria
+("the freeze is granted in one tap") and Open Question 3 ("auto-apply versus
+one-tap") are now stale, this entry resolves that question but the PRD text
+hasn't been updated to match yet.
