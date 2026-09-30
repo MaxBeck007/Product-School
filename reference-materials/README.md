@@ -1,9 +1,14 @@
-# Reference Materials
+# Streakly sample data (Day 3)
 
-This folder holds the raw Day 1 / Day 2 "Claude Code for PMs" course materials (IDEXX cohort, Product School, run 2026-09-28 to 2026-09-29), kept here for reference.
+Local CSVs for Module 5. Do not use the old Google Sheet: tab names and columns
+did not match the prompts, and there was no streak field.
 
-- `orientation-slides.pdf` — the program orientation deck (schedule, program overview, capstone description).
-- `streakly-scenario.md` — the official course scenario brief for the "Streakly" working scenario, including the P1–P6 → module mapping.
-- `streakly-workspace/` — the actual generated Claude Code workspace from the live labs: CLAUDE.md, project skeleton, change log, workspace audit, outcome log, and the `docs/`, `research/`, `data/`, `prototype/`, `skills/`, `agents/`, and `stakeholders/` folders produced during the course.
+| File | What it is |
+|---|---|
+| `users.csv` | One row per user. `cohort_week` 1-5. Week 5 `variant` is `comeback` or `control`. `broke_streak_week1` and `current_streak` are the streak fields. |
+| `retention.csv` | `day_1`, `day_7`, `day_30`, `churned`, plus the same streak fields. |
+| `sessions.csv` | Sessions, including a `comeback` screen when the Comeback experience was shown. |
+| `nudges.csv` | `nudge_type` is `comeback_screen` (treatment) or `streak_lost` (control). |
+| `comeback_sends.csv` | Four sends per week-5 user. `send_number` 1-4. Open rates climb 28% to 56% for treatment vs ~4% control. |
 
-The module files elsewhere in this repo (`01-orient/` through `06-systems/`) are the distilled, committed capstone artifacts derived from this raw work — this folder is the source material they were condensed from.
+Point Claude Code at this `data/` folder. No Google Sheets MCP and no terminal required.
