@@ -14,8 +14,10 @@ The brief: a 24-year-old who hit a 12-day streak, missed two days, and hasn't op
 |-------|--------------|------------------|
 | 1 | Removed the "must pick the right answer to continue" gate on the comeback lesson quiz | The pass/fail gate reintroduced exactly the punishing pressure the feature exists to remove — most damaging for the anxious, early-lapse user (Amara) the feature is meant to protect |
 | 2 | Relabeled the quiz prompt from "Quick check" to "Just for fun, which chord was that?" | Even after the mechanic was fixed, the test-like *label* alone still primed anxiety (Amara); separately, Tom's skepticism of "no cost, no catch" freeze copy only resolved once he actually tapped the button and saw it work — copy alone didn't earn trust |
+| 3 | Track changed from guitar to miniature painting; the multiple-choice quiz was replaced with a photo check-in ("snap today's progress," or skip), same no-pass/fail principle applied to a mechanic with no correct answer to gate on | Direct instruction, not usability-driven; the earlier guitar-track usability findings (Rounds 1-2) don't transfer and are left as a historical record, not superseded |
+| 4 | Ran a new persona, Dax (a hard-to-please, hobby-fluent tabletop wargamer), against the painting-track version; dropped the "60-second lesson" time-box framing from the eyebrow, header, meta text, and CTA button | A fixed time claim on a craft that requires paint-drying time read as evidence the app doesn't understand the hobby, damaging trust in the rest of the screen, not just the time claim. A second finding — "no critique" reads as pointless to a craft-serious user, the opposite effect it has for Amara — was left open, it's a segmentation question, not a copy fix |
 
-**Open items carried forward, not yet actioned:** personalize the comeback lesson to the user's actual pre-lapse track (currently fixed to guitar); whether the freeze should resolve visibly/automatically rather than require a tap-and-trust interaction.
+**Open items carried forward, not yet actioned:** personalize the comeback lesson to the user's actual pre-lapse track (still a fixed example, painting instead of guitar now); whether the freeze should resolve visibly/automatically rather than require a tap-and-trust interaction; whether the Comeback screen needs to vary its "no critique" framing by user segment (craft-serious vs. anxious/early-lapse).
 
 ## Hypothesis Worth Shipping
 
@@ -29,4 +31,4 @@ The brief: a 24-year-old who hit a 12-day streak, missed two days, and hasn't op
 
 **Note:** this session's agenda and post-session template were prepared but the session itself has not happened — nothing in `docs/triad-session.md` records Raj's or Lena's actual positions yet.
 
-**Source:** `reference-materials/streakly-workspace/prototype/README.md`, `prototype/index.html`, `docs/hypothesis.md`, `docs/triad-session.md`, `research/usability-session-1.md`, `change_log.md`.
+**Source:** `reference-materials/streakly-workspace/prototype/README.md`, `prototype/index.html`, `docs/hypothesis.md`, `docs/triad-session.md`, `research/usability-session-1.md`, `research/usability-session-2-dax.md`, `personas/dax.md`, `change_log.md` Entries 1-2, 7-8.

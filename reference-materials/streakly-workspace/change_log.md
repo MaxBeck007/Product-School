@@ -386,3 +386,96 @@ so the original roleplayed reasoning that led here stays intact and readable.
 intervention, mechanic, trigger, and how it's measured (likely a leading
 indicator distinct from Day-7 retention, since by definition it targets users
 who have not yet lapsed). Not yet scoped in any file.
+
+---
+
+## Entry 7, comeback lesson track changed: guitar → miniature painting, quiz → photo
+
+**Date:** 2026-09-30. Max instructed this directly, not roleplayed, not
+triggered by usability feedback.
+
+**What happened:** the mocked comeback-lesson track in `prototype/index.html`
+changed from guitar (chord diagram, multiple-choice quiz) to miniature
+painting (a "today's mini" reference card showing paint swatches, plus a
+photo check-in). Specifically:
+
+- Best-streak label: "guitar track" → "miniature painting track."
+- Lesson content: "Switching between G and C" → "Basecoat & first highlight,"
+  reference card retitled "Skirmisher, Layer 2" with paint-swatch dots
+  replacing fret dots.
+- Check-in mechanic replaced entirely: the 3-option multiple-choice quiz
+  ("Just for fun, which chord was that?") is gone. In its place, a photo
+  capture (`<input type="file" accept="image/*" capture="environment">`)
+  styled as a drop zone, plus a "Skip today, no photo" option. Either path
+  shows the same affirming message and unlocks Continue, no pass/fail, same
+  principle as the original P3L2 quiz-gate fix, just applied to a mechanic
+  that has no "correct answer" to gate on in the first place.
+- The "60-SECOND COMEBACK LESSON" eyebrow, the "Comeback lesson" header, and
+  the "1 min" meta text were **left as-is** in this pass, carried over
+  unedited from the guitar version. Whether a discrete "60-second lesson"
+  framing fits a painting session is an open question, not resolved here.
+
+**Why:** direct instruction, no research citation to attach. `research/usability-session-1.md` and `change_log.md` Entries 1-2 (the mock
+Priya/Tom/Amara sessions) were run against the **guitar** version and are
+about the quiz-gate and copy issues specifically; they do not transfer to
+this version and are left untouched as a historical record of that version,
+not superseded.
+
+**Changes made:** `prototype/index.html` only, as described above.
+`prototype/README.md`, `docs/pm-brief.md`, and the CLAUDE.md gap list are
+updated separately to match.
+
+**Open item carried forward:** whether "60-second lesson" is the right frame
+for a craft session that doesn't fit a fixed time box. Untested against this
+version. See Entry 8 for a first read on this from a new persona.
+
+---
+
+## Entry 8, P3L2a rerun with a new persona (Dax), one fix made
+
+**Date:** 2026-09-30. **Label: mock/illustrative.** Dax (`personas/dax.md`) is
+a constructed persona, not a real user. Full transcript:
+`research/usability-session-2-dax.md`.
+
+**What happened:** ran the standard 4 P3L2/P3L2a questions against
+`prototype/index.html` as it stood after Entry 7, in character as Dax, a
+competitive tabletop wargamer built specifically to stress-test the new
+miniature-painting content with hobby-fluent skepticism Priya/Tom/Amara can't
+provide.
+
+**What was working:** the best-streak stat carrying over (not resetting) and
+the streak-freeze both landed with him as they did for the other personas.
+The reference card's instruction text ("basecoat is dry, add one highlight
+layer") read as authentic, not invented-sounding.
+
+**Top 2 friction points:**
+1. **"60-second lesson" framing doesn't fit the craft.** Painting requires
+   dry time between coats; a fixed time box reads as evidence the app doesn't
+   actually understand the hobby, which damages trust in everything else on
+   the screen, not just the time claim.
+2. **"No critique" reads as pointless, not reassuring, to this segment.** The
+   copy that removes pressure for Amara removes the entire point of
+   photographing progress for Dax, a craft hobbyist expects a photo to be
+   looked at. Same line, opposite effect depending on the user, an echo of
+   the same-mechanic-opposite-effect pattern the original interview synthesis
+   found in Priya vs. Tom/Amara (`research/interview-synthesis.md`,
+   Contradictions).
+
+**Change made:** dropped the "60-second lesson" time-box framing. "60-SECOND
+COMEBACK LESSON" → "Today's comeback session," "Comeback lesson" header →
+"Comeback session," removed "1 min" from the lesson-card meta line, and the
+primary CTA "Start the 1-minute lesson" → "Start today's session" (missed on
+the first pass, same mismatch Dax named, caught on review). Fix #2 (the "no
+critique" tension) was **not** actioned, see below.
+
+**Reasoning:** fix #1 is a labeling mismatch, low-risk, matches the class of
+fix already used for the original quiz-gate/label corrections (Entries 1-2).
+Fix #2 is a segmentation question, does this screen serve craft-serious users
+differently than anxious early-lapse users, not something a copy tweak
+resolves, and picking a resolution here would be inventing a product
+decision Dax's feedback alone doesn't settle.
+
+**Open item carried forward:** the "no critique" tension (friction #2) is
+unresolved. Whether the Comeback screen needs to know which kind of user it's
+talking to, or whether one forgiving default is an acceptable tradeoff across
+segments, is a real open product question, not decided in this entry.

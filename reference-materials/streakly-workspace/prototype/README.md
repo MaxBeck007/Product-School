@@ -2,6 +2,13 @@
 
 A single-file HTML click-through prototype. Open `index.html` in a browser.
 
+> **Track changed 2026-09-30** (`change_log.md` Entry 7): the mocked lesson
+> content is now **miniature painting**, not guitar, and the check-in is a
+> **photo capture** (or skip), not a multiple-choice quiz. Everything below
+> describes the current, painting-track version. `research/usability-session-1.md`
+> and `change_log.md` Entries 1-2 tested the earlier guitar/quiz version and
+> are left as a historical record, not updated to match.
+
 ## PM Brief
 
 **User:** 24-year-old who hit a 12-day streak, missed two days, and has not opened
@@ -20,9 +27,11 @@ demo):
 
 1. **Comeback screen** (entry point): personalized welcome, best-streak stat (🔥
    12), a 60-second comeback lesson card, and a one-tap streak-freeze offer.
-2. **Lesson mock**: a guitar-track chord lesson (G → C), 1 quiz question,
-   `Continue` unlocks after a correct answer. Content is a realistic mock, not
-   wired to Streakly's real lesson engine.
+2. **Lesson mock**: a miniature-painting reference card ("Skirmisher, Layer 2,"
+   basecoat + highlight), then a photo check-in, take/upload a photo of
+   today's progress, or skip. `Continue` unlocks either way, no pass/fail.
+   Content is a realistic mock, not wired to Streakly's real lesson engine or
+   a real camera roll.
 3. **Done screen**: confirms day 1 is restarted and that the best-streak stat is
    still saved.
 

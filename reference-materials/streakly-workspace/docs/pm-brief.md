@@ -32,6 +32,10 @@ challenge later.*
   tracks named in the product description: languages, guitar, coding, chess),
   chosen because it's easy to mock a plausible 60-second lesson for and easy for
   a design reviewer to evaluate without domain knowledge.
+  **Changed 2026-09-30 (`change_log.md` Entry 7):** Max instructed a track
+  change to miniature painting, with the quiz replaced by a photo check-in.
+  This paragraph is left as-is as the original assumption and its reasoning;
+  it is superseded, not deleted.
 - **Assumption:** the lesson content is a **realistic mock**, not wired to a real
   lesson engine, since the lesson content system itself isn't in scope for this
   prototype.
