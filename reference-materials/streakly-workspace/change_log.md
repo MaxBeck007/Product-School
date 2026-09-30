@@ -1,9 +1,51 @@
 # Streakly, Comeback Experience: Change Log
 
 > Note: this file was meant to be initialized in P1L4 (part of the three core
-> files). We skipped ahead to P2/P3 before that lesson ran, so this is the first
-> entry rather than day 1 of discovery. P1L4 is still open if you want to
-> backfill `project.md` and `strategy.md` alongside it.
+> files). We skipped ahead to P2/P3 before that lesson ran, so Entry 1 below was
+> originally the first entry rather than day 1 of discovery. **Backfilled
+> 2026-09-30:** Entry 0 now logs that day-1 kickoff. Per `workspace-audit.md`
+> §3 (R9 / "deliberately not recommended"), `project.md` and `strategy.md` are
+> staying unbuilt as separate files, Max confirmed on 2026-09-30 that the
+> content already living in `CLAUDE.md`, `docs/decision-brief.md`, and
+> `docs/hypothesis.md` should stay the one source rather than adding two more
+> places for the same facts to drift.
+
+---
+
+## Entry 0 (backfilled), P1L4, day 1 of discovery logged
+
+**Date of the work being logged:** 2026-09-28 (P1, the original session).
+**Entry written:** 2026-09-30, closing the specific P1L4 gap named in this
+file's header note and in `workspace-audit.md`'s artifact map ("P1L4 →
+`change_log.md`, partial"). Reconstructed from `project-skeleton.md`,
+`CLAUDE.md`, and `docs/decision-brief.md`, not from session notes.
+
+**What happened:** day 1 of discovery for the Streakly Comeback experience.
+Role and squad confirmed: PM, Engagement squad; triad is Raj (Senior Engineer)
+and Lena (Product Designer); reports to Marcus, Head of Product
+(`project-skeleton.md` Participants table). Current phase: discovery, no
+committed scope, 8 weeks from sprint kickoff.
+
+**The hypothesis logged today:** users go passive after breaking a streak
+because the reset feels like failure with no graceful way back in, not because
+the daily lessons are bad. The bet under discovery: a personalized Comeback
+screen (best-streak stat, 60-second comeback lesson, one-tap streak-freeze),
+in place of the current cold reset-to-zero (`project-skeleton.md` "Solution
+direction discussed, not committed").
+
+**Key tension carried into every future session:** re-engagement nudges vs.
+notification fatigue, users who feel nagged turn notifications off entirely,
+closing the one channel that could otherwise win them back after a lapse
+(`CLAUDE.md`).
+
+**Changes made:** none, this entry documents kickoff, it does not action
+anything.
+
+**Open item carried forward:** the four questions `project-skeleton.md` left
+open, whether the root cause is the reset, notification timing, or both;
+who qualifies for a comeback experience and what the freeze rules are; what
+Day-7 target counts as success and by when; whether notification tone/cadence
+is in scope. All four were still open as of the 2026-09-30 backfill.
 
 ---
 

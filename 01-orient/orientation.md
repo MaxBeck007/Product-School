@@ -26,6 +26,7 @@ The key tension I'm navigating: re-engagement nudges vs. notification fatigue â€
 
 | Date | Change | Why |
 |------|--------|-----|
+| 2026-09-28 (backfilled 2026-09-30) | Logged day 1 of discovery: role/squad, phase, and the Comeback-screen hypothesis | P1L4 asked for this on day 1; the team skipped straight to P2/P3 before it happened, so it was written after the fact from `project-skeleton.md`, `CLAUDE.md`, and `docs/decision-brief.md` |
 | 2026-09-28 | Removed the "must pick the right answer to continue" gate on the comeback lesson quiz | Mock usability testing (Amara, Tom) showed the pass/fail gate reintroduced the exact punishing pressure the feature exists to remove |
 | 2026-09-28 | Relabeled the quiz prompt from "Quick check" to "Just for fun" | Even after the penalty was removed, the test-like label alone still primed anxiety (Amara) |
 | 2026-09-28 | Rewrote the PRD constraint from "no new integrations" to explicitly allow new *fields* | Roleplayed spec-readiness session caught that the freeze rule needs new fields (pre-break streak length, freeze-spent state) that "no new integrations" had implicitly ruled out |
