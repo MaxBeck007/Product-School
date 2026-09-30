@@ -54,22 +54,27 @@ template. Nothing here records Raj's or Lena's actual positions.**
 
 ---
 
-## Post-Session Alignment Doc (template, to fill in live)
+## Post-Session Alignment Doc
 
-**Date:**
-**Attendees:**
+> Filled in from the session. Full transcript: `docs/triad-session-transcript.md`
+> (fully roleplayed, not a real meeting).
+
+**Date:** 2026-09-30
+**Attendees:** Max (PM), Raj (Engineering), Lena (Design)
 
 **Decisions made:**
-1.
-2.
-3.
+1. **Personalization:** ship the single miniature-painting example for the first test. Personalizing the lesson to a user's actual pre-lapse track becomes its own ticket, not a blocker for this one.
+2. **Freeze interaction:** switch from one-tap to pre-applied/auto-resolved, shown as already done, no tap required. Raj: this is *less* implementation work, not more, since the eligibility check already has to run server-side before the screen renders. Implemented in `prototype/index.html`, see `change_log.md` Entry 10.
+3. **Empty state:** confirmed undesigned. Scheduled before the next round of testing (not before this review, not indefinitely deferred). Owner: Lena.
 
 **Open questions still unresolved:**
--
+- Whether "no critique" on the photo check-in reads as dismissive to a user who'd actually want feedback (Lena flagged, no evidence either way).
+- The proactive/anticipatory piece for not-yet-lapsed users (`change_log.md` Entry 6) — scope decided, not designed. Explicitly not this meeting's job.
+- Freeze eligibility edge cases (second lapse in the same week, never using the freeze) — treated as fast-follow, not resolved here.
 
-**Owner for next step:**
+**Owner for next step:** Raj (freeze spec), Lena (empty state design).
 
-**Next checkpoint:**
+**Next checkpoint:** next round of prototype testing, empty state design due before it.
 
 ---
 

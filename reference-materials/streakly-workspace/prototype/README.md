@@ -19,7 +19,8 @@ Three screens, walkable in the browser with real clicks (no code changes needed 
 demo):
 
 1. **Comeback screen** (entry point): personalized welcome, best-streak stat (🔥
-   12), a comeback session card, and a one-tap streak-freeze offer.
+   12), a comeback session card, and a streak freeze shown as already applied
+   (pre-resolved, `change_log.md` Entry 10, no tap required).
 2. **Lesson mock**: a miniature-painting reference card ("Skirmisher, Layer 2,"
    basecoat + highlight), then a photo check-in, take/upload a photo of
    today's progress, or skip. `Continue` unlocks either way, no pass/fail.
@@ -28,17 +29,19 @@ demo):
 3. **Done screen**: confirms day 1 is restarted and that the best-streak stat is
    still saved.
 
-Clicking "Apply streak freeze" shows an inline confirmation toast without leaving
-the screen, no separate flow.
+The freeze needs no click at all, it renders already applied when the screen
+loads, no button, no toast, no separate flow.
 
 ## Key decisions made during the interview (P3L1)
 
 - **Miniature painting track, mocked content.** Chosen to make the lesson
   concrete for usability testing and design review, not because miniature
   painting is the primary track in scope.
-- **Streak freeze is a single free, one-tap grant.** No cost or expiry logic
-  shown. The real freeze rules (how many, when they expire) are an open item
-  Raj flagged in the original P1 Slack thread and are out of scope here.
+- **Streak freeze is free and pre-applied**, shown as already resolved, no
+  tap required (`change_log.md` Entry 10, decided in the P3L4 triad session,
+  originally one-tap at P3L1). No cost or expiry logic shown. The real
+  freeze rules (how many, when they expire) are an open item Raj flagged in
+  the original P1 Slack thread and are out of scope here.
 - **In-app screen only.** Notification tone/copy is a separate, already-identified
   problem (`research/nps-analysis.md`) but is not part of this feature's scope.
 - **Tone is deliberately "welcome back," never "you lost your streak."** This is

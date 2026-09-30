@@ -125,8 +125,9 @@ instrumented.
    visibly real rather than claimed, because copy alone did not earn my trust
    (`change_log.md`, Entry 2, Tom compared "no cost, no catch" to what an app says
    right before it asks him to pay).
-   *Acceptance:* open. Whether the freeze resolves visibly on its own or requires a
-   tap is a product decision, not a copy fix. See Open Questions.
+   *Acceptance:* the freeze is pre-applied and shown as already resolved on
+   screen load, no tap required (`change_log.md` Entry 10, decided in the
+   P3L4 triad session).
 
 ## Open Questions
 
@@ -139,8 +140,8 @@ instrumented.
 2. **Empty state.** What a user with no meaningful best streak sees instead. Lena's
    stated pattern is to define the empty state before the happy path
    (`stakeholders/lena.md`).
-3. **Auto-apply versus one-tap freeze.** Resolving story 5 either way changes the
-   mechanic specified in the original brief (`change_log.md`, Entry 2, open item).
+3. **Auto-apply versus one-tap freeze.** Resolved 2026-09-30: auto-apply.
+   See story 5's acceptance criteria and `change_log.md` Entry 10.
 4. **Success threshold and measurement window.** See Success Metrics. Undecided.
 5. **Weekly eligible-user volume.** How many weekly active users break a streak per
    week is unconfirmed. The powered test needs roughly 0.46% of 85,000 WAU per week

@@ -7,10 +7,11 @@
 > built into the prototype. That gap is exactly what several checklist items
 > below surface.
 >
-> **Re-verified 2026-09-30 after `change_log.md` Entry 7:** the check-in
-> mechanic is a photo capture (or skip), not a multiple-choice quiz. Rows 4,
-> 5, and 10 test that mechanic, re-run by hand against the live prototype,
-> not just relabeled.
+> **Re-verified 2026-09-30 after `change_log.md` Entries 7 and 10:** the
+> check-in mechanic is a photo capture (or skip), not a multiple-choice
+> quiz, and the freeze is pre-applied, not one-tap. Rows 3, 4, 5, and 10
+> test those mechanics, re-run by hand against the live prototype, not just
+> relabeled.
 
 ## 1. Edge case list
 
@@ -42,7 +43,7 @@
 | --- | --- | --- | --- |
 | 1 | Handles a user with no best-streak stat (never had a streak) | **Fail** | Yes, hardcoded to show "12" always |
 | 2 | Lesson content matches the user's actual track | **Fail** (known, logged) | No for a v1 discovery test, per `docs/pm-brief.md`'s explicit assumption, but must be resolved before real launch |
-| 3 | Freeze tap shows clear confirmation | **Pass** | — |
+| 3 | Freeze renders as already applied, no tap required (`change_log.md` Entry 10) | **Pass**, re-verified live 2026-09-30 | — |
 | 4 | Photo check-in doesn't block progress if skipped | **Pass** | — |
 | 5 | Check-in copy avoids test-like framing | **Pass**, with a caveat | Passes the test-like-framing check Amara's segment needed; a different, unactioned finding from Dax's review (`change_log.md` Entry 8) is that "no critique" reads as pointless, not reassuring, to a craft-serious user — not a launch blocker, a logged open question |
 | 6 | User can decline/skip the screen | **Cannot fully determine** | The button exists but only shows a placeholder alert in this static prototype, not real navigation |

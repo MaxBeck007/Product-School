@@ -67,6 +67,10 @@ one of the questions queued for Raj in `docs/triad-session.md`, whether a
 pre-applied, already-resolved freeze is feasible instead of the current
 one-tap version.
 
+**Resolved 2026-09-30 (`change_log.md` Entries 9-10):** the real P3L4 triad
+session decided pre-applied, Raj confirmed it's less implementation work,
+not more. Implemented in `prototype/index.html`.
+
 **Lena:** This only exists after someone already breaks a streak. Amara told
 us she's anxious from day 4, before anything's broken. Is "not yet addressed"
 actually a scope gap we should flag before this ships, or are we pretending

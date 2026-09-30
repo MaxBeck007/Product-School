@@ -15,8 +15,8 @@ users, 38.9% → 56.5% across 4 weeks, not fewer signups or a failing
 notification channel.
 
 **The fix and its result:** a personalized Comeback screen (best-streak stat,
-a comeback session, one-tap freeze) tested 50/50 in cohort week 5: **76% vs.
-46% Day-7 retention, 36% vs. 22% Day-30.**
+a comeback session, a pre-applied freeze) tested 50/50 in cohort week 5:
+**76% vs. 46% Day-7 retention, 36% vs. 22% Day-30.**
 
 ---
 

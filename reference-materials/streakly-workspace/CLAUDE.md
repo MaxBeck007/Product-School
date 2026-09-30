@@ -49,9 +49,9 @@ Discovery. No committed scope. The recommendation is **not** "ship it," it is
 "run a properly powered confirmatory test first" (`docs/one-pager.md`,
 `docs/recommendation-memo.md`).
 
-- **Direction:** the Comeback screen, best-streak stat, 60-second lesson,
-  one-tap freeze. Chosen over status quo and notification-only fixes
-  (`docs/decision-brief.md`).
+- **Direction:** the Comeback screen, best-streak stat, a comeback session,
+  a pre-applied streak freeze (no tap, `change_log.md` Entry 10). Chosen
+  over status quo and notification-only fixes (`docs/decision-brief.md`).
 - **Evidence for it:** pilot 76% vs 46% Day-7, n=50/variant, p=0.0021 by
   two-proportion z-test, cross-checked p=0.0038 Fisher's exact
   (`data/experiment-design.md`). Treatment open rate climbed 28% → 56% across
@@ -60,9 +60,9 @@ Discovery. No committed scope. The recommendation is **not** "ship it," it is
   lift needs ≈1,568/variant (≈3,136 total), which needs ≈392 eligible users
   per week to fit 8 weeks. **That weekly volume is unconfirmed** and is the
   single biggest open input.
-- **Built:** click-through prototype only (`prototype/index.html`), two copy
-  fixes already made from persona testing (`change_log.md` entries 1-2).
-  Freeze eligibility is a discussed position, not built.
+- **Built:** click-through prototype only (`prototype/index.html`), iterated
+  through Entries 1-2 and 7-10 from persona testing and the real P3L4 triad
+  session. Freeze eligibility is a discussed position, not built.
 
 ## Where to look for what
 | Need | File |

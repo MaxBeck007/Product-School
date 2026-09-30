@@ -44,6 +44,6 @@
 ## Hypothesis Statement
 
 We believe that a personalized Comeback screen, showing a user's best-streak
-stat, a low-pressure comeback session, and a one-tap streak-freeze, will
+stat, a low-pressure comeback session, and a pre-applied streak-freeze, will
 deliver renewed engagement after a broken streak for Streakly users in their
 first 7 days, as measured by Day-7 retention rate.

@@ -203,11 +203,6 @@
       </div>
     </div>
 
-    <div id="toast-freeze" class="toast">
-      <span>✓</span>
-      <span>Streak freeze applied, your best streak is protected while you get back in.</span>
-    </div>
-
     <div class="lesson-card">
       <div class="eyebrow">Today's comeback session</div>
       <div class="row">
@@ -221,16 +216,15 @@
 
     <div class="freeze-card" id="freeze-offer">
       <div class="row">
-        <div class="icon">🛡️</div>
+        <div class="icon">🛡️✓</div>
         <div>
-          <div class="freeze-title">One-tap streak freeze</div>
-          <div class="freeze-copy">Protect the 12-day best you already built while you ease back in. No cost, no catch.</div>
+          <div class="freeze-title">Streak freeze applied</div>
+          <div class="freeze-copy">Your 12-day best is protected while you ease back in. Already done, nothing to tap.</div>
         </div>
       </div>
     </div>
 
     <button class="btn btn-primary" onclick="startLesson()">Start today's session</button>
-    <button class="btn btn-secondary" id="freeze-btn" onclick="applyFreeze()">Apply streak freeze</button>
     <button class="btn btn-ghost" onclick="alert('In the real app this would return to the standard home screen.')">Not now, take me to my home screen</button>
 
     <div class="caption">Screen 1 of 3 · Comeback entry point</div>
@@ -315,13 +309,6 @@
     document.getElementById('screen-lesson').classList.remove('show');
     document.getElementById('screen-done').classList.add('show');
   }
-  function applyFreeze() {
-    document.getElementById('toast-freeze').classList.add('show');
-    const btn = document.getElementById('freeze-btn');
-    btn.textContent = 'Streak freeze applied ✓';
-    btn.disabled = true;
-    btn.style.opacity = .6;
-  }
   function restart() {
     document.getElementById('screen-done').classList.remove('show');
     document.getElementById('screen-comeback').classList.remove('hide');
@@ -336,11 +323,6 @@
     document.getElementById('photo-drop-icon').textContent = '📷';
     document.getElementById('photo-drop-text').textContent = 'Take or upload a photo';
     document.getElementById('photo-input').value = '';
-    const freezeBtn = document.getElementById('freeze-btn');
-    freezeBtn.textContent = 'Apply streak freeze';
-    freezeBtn.disabled = false;
-    freezeBtn.style.opacity = 1;
-    document.getElementById('toast-freeze').classList.remove('show');
   }
 </script>
 
