@@ -352,3 +352,37 @@ personalization, freeze self-resolution, notification-independent trigger
 volume, and the missing P5 source CSVs. Deferred from `workspace-audit.md`:
 R1 `open-items.md`, R3 `docs/definitions.md`, R4 stakeholder template and a
 profile for Max, and the R6-R8 file moves.
+
+---
+
+## Entry 6, reactive-only scope decision made
+
+**Date:** 2026-09-30. Max decided, reviewing `docs/design-review.md` Part 3 and
+`docs/prd.md` Open Question 8 directly (this was not roleplayed).
+
+**What happened:** `docs/design-review.md` Part 3 named the sharpest unresolved
+strategic gap in the workspace: the Comeback screen only reaches a user *after*
+they lapse, but Day-7 retention measures a population that also includes
+anxious, not-yet-lapsed users (Amara's profile, day 4). `docs/prd.md` Open
+Question 8 named the same gap and left it as a choice between two options:
+name it a non-goal and accept the ceiling, or scope a proactive piece as
+parallel work. It was logged as "currently neither," undecided.
+
+**Decision made: expand scope.** The Comeback experience will include a
+proactive, anticipatory piece for users who are anxious but have not yet
+broken a streak, alongside the existing reactive Comeback screen for users who
+have. This is a real scope decision, not a roleplay output.
+
+**What this decision does not do:** it does not yet define what the proactive
+piece is. No mechanic, screen, or trigger has been specified. That is new,
+unstarted work, not a detail filled in here.
+
+**Changes made:** none to the prototype, PRD text, or design review content
+itself. `docs/prd.md` Open Question 8 and `docs/design-review.md` Part 3 each
+get a short resolution note pointing to this entry rather than being rewritten,
+so the original roleplayed reasoning that led here stays intact and readable.
+
+**Open item carried forward, new:** define the proactive/anticipatory
+intervention, mechanic, trigger, and how it's measured (likely a leading
+indicator distinct from Day-7 retention, since by definition it targets users
+who have not yet lapsed). Not yet scoped in any file.

@@ -178,13 +178,15 @@ someone else.
   click-through prototype. The P5 dataset assumes the experiment already ran.
   Do not let a reader hit both framings without warning
   (`docs/capstone-session.md` F1).
-- **Reactive-only scope gap:** the Comeback screen reaches users only *after*
-  a lapse, but Day-7 retention measures a population that includes users who
-  are anxious and have not lapsed yet (Amara, day 4). A reactive-only fix
-  structurally cannot reach them, so part of the metric this feature is
-  accountable for is outside its reach by design. Either a named non-goal or a
-  scope expansion, currently undecided (`docs/design-review.md` Part 3,
-  `docs/prd.md` Open Question 8).
+- **Reactive-only scope gap, resolved 2026-09-30:** the Comeback screen
+  reaches users only *after* a lapse, but Day-7 retention measures a
+  population that includes users who are anxious and have not lapsed yet
+  (Amara, day 4). Max decided to expand scope rather than name this a
+  non-goal (`change_log.md` Entry 6, `docs/design-review.md` Part 3,
+  `docs/prd.md` Open Question 8). **New open item this creates:** the
+  proactive/anticipatory piece itself, mechanic, trigger, and metric, is not
+  yet designed. Treat "Comeback experience" from here on as reactive screen +
+  an undesigned proactive piece, not the reactive screen alone.
 - **Notification-independent trigger unanswered:** how a user who already
   turned notifications off ever sees the feature meant to win them back.
   Judged the objection most likely to stall the initiative

@@ -16,7 +16,9 @@ A roleplayed spec-readiness session (standing in for Raj, clearly labeled as suc
 
 *Confirm the spec is ready for delivery, then own the last 20%.*
 
-A roleplayed design review (standing in for Lena) surfaced the sharpest strategic point in the workspace: the Comeback screen is **reactive-only** — it only reaches users *after* they lapse — but Day-7 retention measures a population that includes anxious, not-yet-lapsed users like Amara (day 4). A reactive-only fix structurally can't reach her, so part of the metric this feature is accountable for is outside its reach by design. That's now PRD Open Question 8, a product/roadmap call for PM and Marcus, not a design call.
+A roleplayed design review (standing in for Lena) surfaced the sharpest strategic point in the workspace: the Comeback screen is **reactive-only** — it only reaches users *after* they lapse — but Day-7 retention measures a population that includes anxious, not-yet-lapsed users like Amara (day 4). A reactive-only fix structurally can't reach her, so part of the metric this feature is accountable for is outside its reach by design. That was PRD Open Question 8, a product/roadmap call for PM and Marcus, not a design call.
+
+**Resolved 2026-09-30:** scope expands. The Comeback experience now includes a proactive, anticipatory piece for not-yet-lapsed anxious users, alongside the existing reactive screen — the proactive piece itself is still undesigned, this closed which of the two options, not the design work.
 
 | Edge case | Expected behavior | Status |
 |-----------|--------------------|--------|

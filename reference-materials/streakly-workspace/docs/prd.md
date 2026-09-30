@@ -169,3 +169,9 @@ instrumented.
    Marcus, not a design call (`docs/design-review.md`, Part 3). Added 2026-09-28
    after the P7L4 capstone review found it recorded in the design review but
    nowhere in the spec.
+
+   **Resolved 2026-09-30 (`change_log.md`, Entry 6):** scope expands. The
+   Comeback experience will include a proactive, anticipatory piece for
+   not-yet-lapsed anxious users, alongside the existing reactive screen. The
+   proactive piece itself is not yet designed, this closes the "which of the
+   two options" question, not the underlying design work.

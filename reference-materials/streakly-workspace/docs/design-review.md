@@ -100,3 +100,9 @@ proactive moment is a product/roadmap call (PM and Marcus), not a design
 call. Lena's domain is the tone and interaction craft within whatever screens
 get built, e.g., how the freeze resolves, how the lesson is framed, not
 whether a new screen gets added to the roadmap.
+
+**Resolved 2026-09-30 (`change_log.md`, Entry 6; `docs/prd.md` Open Question
+8):** Max made the call, scope expands to include a proactive piece for
+not-yet-lapsed anxious users. Not roleplayed, not Lena's decision to make, and
+still undesigned, this closes which of the two options, not the design work
+itself.
