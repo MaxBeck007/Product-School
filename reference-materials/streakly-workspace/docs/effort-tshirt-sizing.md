@@ -42,6 +42,22 @@ The schema change and migration is the long pole, not the client screen. Everyth
 
 ---
 
+## Translating L into weeks
+
+**Max:** What's an L actually mean in weeks?
+
+**Raj:** Caveat first, this workspace has no real sprint history for me, no real velocity to calibrate against. What I can do is size the actual pieces and add them up, that's still an estimate, not a guess, because it's tied to specific work, not a label.
+
+- **Schema change + migration:** the long pole. Writing it, testing it against existing users, and a rollout plan given the blast radius (`docs/codebase-summary.md` section 5), roughly a week to a week and a half on its own.
+- **Freeze eligibility logic** (one per lapse, 3+ day streaks, no stacking, plus tests): 3 to 4 days.
+- **Client build**, re-implementing what's already prototyped against real data: 2 to 3 days, but only *after* the schema lands, this is sequential, not parallel (`docs/codebase-summary.md`'s sequencing flag).
+- **Empty state implementation**, once Lena hands me a design: 1 to 2 days.
+- **QA edge cases** (second-lapse handling, already-used freeze, the offline race condition from my PR comment): 1 to 2 days.
+
+Add it up with the sequencing dependency respected, roughly **2.5 to 3 weeks for one engineer**, meaning me, this squad doesn't have a second backend engineer. If that needs to move faster, that's a headcount conversation, not a scope conversation, I can't parallelize a migration with a client build that depends on it.
+
+That's still the L scenario, cheap discovery trigger assumed. The XL branch, if the trigger needs new push infrastructure, adds work I haven't sized at all yet, because I don't know what that infrastructure looks like until someone answers the question.
+
 ## Step out of character, notes for Max
 
 **Why this matters before P5/P6:** the experiment design in P5 assumes the Comeback screen already shipped (it's the course's supplied dataset). This sizing is the real-world reminder that "shipped" is an L-sized bet resting on one unconfirmed assumption about the discovery trigger, not a small follow-on to the prototype.

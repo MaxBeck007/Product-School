@@ -606,3 +606,26 @@ to `docs/prd.md`, `docs/spec-readiness.md`, or the prototype.
 trigger) now has a cost attached (L vs. XL), which raises its priority
 relative to the other open questions, but the question itself is still
 unresolved.
+
+---
+
+## Entry 13, Raj translates L into weeks, roleplayed
+
+**Date:** 2026-09-30. **Label: roleplayed, not a real estimate.** Follow-up
+to Entry 12, added to `docs/effort-tshirt-sizing.md` rather than a new file.
+
+**What happened:** Max asked what "L" means in weeks. Raj flagged upfront
+that there's no real sprint velocity in this workspace to calibrate
+against, then sized the individual pieces from Entry 12 and added them up
+instead of guessing at a label.
+
+**The number: roughly 2.5-3 weeks for one engineer** (Raj, this squad has
+no second backend engineer), with the schema/migration work (1-1.5 weeks)
+as the long pole and the client build explicitly sequential to it, not
+parallel.
+
+**Change made:** appended to `docs/effort-tshirt-sizing.md`, no new file.
+
+**Open item carried forward:** unchanged from Entry 12, the discovery
+trigger question still decides whether this stays at ~3 weeks or grows past
+it into unsized XL work.
