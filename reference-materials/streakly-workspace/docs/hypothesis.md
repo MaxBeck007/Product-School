@@ -22,6 +22,10 @@
 
 - **Assumption:** a mocked, single-track lesson (guitar) is a fair stand-in for
   what a fully personalized, track-matched lesson would do in production.
+  **Updated 2026-09-30 (`change_log.md` Entry 7):** the mocked track is now
+  miniature painting, not guitar. The assumption itself (a single fixed track
+  stands in for real personalization) is unchanged, only the example track is
+  different.
 - **Assumption:** a simple, free, one-tap streak-freeze grant is the right
   version of the mechanic to test; the real eligibility and expiry rules are
   still an open item Raj flagged and are not resolved here.
@@ -46,3 +50,11 @@ We believe that a personalized Comeback screen, showing a user's best-streak
 stat, a low-pressure 60-second comeback lesson, and a one-tap streak-freeze, will
 deliver renewed engagement after a broken streak for Streakly users in their
 first 7 days, as measured by Day-7 retention rate.
+
+> **Note, 2026-09-30 (`change_log.md` Entry 8):** the "60-second" time-box in
+> this statement is the same framing dropped from the prototype after Dax's
+> review, a fixed time claim doesn't fit a craft track. Left as originally
+> written here rather than rewritten, the mechanism the hypothesis is testing
+> (acknowledgment + a low-effort re-entry action) doesn't depend on the time
+> claim, but a reader citing this statement verbatim should know the "60
+> seconds" language is no longer in the prototype it describes.
