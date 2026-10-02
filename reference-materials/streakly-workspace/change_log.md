@@ -749,3 +749,55 @@ real run and the full discrepancy table.
 **Open item carried forward, new:** reconcile or explain the weeks 1-4
 discrepancy between `data/metric-findings.md`/`data/metric-diagnosis.md`
 and the real CSVs now in `data/raw/`. Added to `open-items.md`.
+
+---
+
+## Entry 17, column name resolved; a real streak-break field investigated, not oversold
+
+**Date:** 2026-10-02. Max asked for a reasonable next step out of the P8
+walkthrough. Not roleplayed.
+
+**What happened, part 1, the easy close:** three files
+(`agents/metric-pulse.md` §8.2, `agents/anomaly-diagnosis.md` §3 step 4 and
+§7.2, `agents/registry.md` §6.3) independently flagged the same unverified
+question, is the channel column actually named `channel`. Ran `DESCRIBE
+nudge_users` against the real, restored CSVs: **it's `acquisition_channel`,
+not `channel`**; `platform` is named as assumed. Fixed the example SQL in
+`anomaly-diagnosis.md` §3 step 4 to match (also fixed its variant label and
+boolean cast, same issues as `change_log.md` Entry 16), and closed the
+question in all three files plus the registry's top-of-file status banner.
+
+**What happened, part 2, the one worth being careful about.** `nudge_users.csv`
+and `nudge_retention.csv` both carry a field, `broke_streak_week1`, that
+doesn't exist in the course's originally-described schema and that nobody in
+this workspace knew about until this session. Every break-rate figure
+everywhere (`CLAUDE.md`'s glossary, `data/metric-findings.md` Q2,
+`data/metric-diagnosis.md`) is explicitly labeled a proxy, day-1-active and
+day-7-inactive, because "no literal streak-break event field exists in the
+data." That sentence needed checking now that one appears to.
+
+**Checked, not assumed:** cross-tabbed `broke_streak_week1` against the
+day_1/day_7 proxy for all 457 "starters" (day_1 = true). **Agreement: 57.3%
+(262/457).** That is not a validation of the proxy and not a refutation of
+it, it's evidence the two fields measure **related but different things**:
+`broke_streak_week1` appears to track whether a user's streak ever broke
+during week 1 at any point, while the day_1/day_7 proxy tracks whether they
+were active on two specific days. A user can break a streak mid-week and
+still be active by day 7 (looks "sustained" to the proxy, "broke" to the
+field), or vice versa. 129 of 276 proxy-"broke" users are *not* flagged by
+the literal field; 48 of 181 proxy-"sustained" users *are*.
+
+**Not actioned:** none of the "proxy" language in `CLAUDE.md`,
+`data/metric-findings.md`, or `data/metric-diagnosis.md` was rewritten. A
+57% agreement rate does not license swapping the proxy for the literal
+field, or vice versa, that is a bigger analytical call than this check
+settles, and `data/metric-diagnosis.md`'s whole metric tree is built on the
+proxy. Logged as a real open question instead of a quiet upgrade.
+
+**Change made:** `agents/metric-pulse.md`, `agents/anomaly-diagnosis.md`,
+`agents/registry.md` (column name, 3 files); no changes to `CLAUDE.md`,
+`data/metric-findings.md`, or `data/metric-diagnosis.md`.
+
+**Open item carried forward, new:** what does `broke_streak_week1` actually
+mean, and should any analysis prefer it over the proxy now that it exists?
+Not decided here. Added to `open-items.md`.

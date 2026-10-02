@@ -51,14 +51,22 @@
   channel) and H2 (platform) in the churn-hypothesis ranking may not be
   independent, whether control shows the same iOS/Android gap has never
   been run. (`data/metric-diagnosis.md`, H2)
-- [ ] **The `channel` and `platform` column names are unverified.** Quoted
-  in `data/metric-diagnosis.md` without the SQL that produced them, a
-  `DESCRIBE nudge_users` would settle both. (`CLAUDE.md`, Known gaps)
+- [x] ~~The `channel` and `platform` column names are unverified.~~
+  **Resolved 2026-10-02:** the real column is `acquisition_channel`, not
+  `channel`; `platform` is named as assumed. Fixed in the three agent specs
+  that flagged it. (`change_log.md`, Entry 17)
 - [x] ~~Agents have never run on real data.~~ **Resolved 2026-10-02:** ran
   `agents/monday_retention.py` against the real CSVs in `data/raw/` for
   real. Reproduced `data/metric-findings.md` Q3 exactly (76.0%/46.0%, week
   5). Required 3 real schema fixes (boolean casts, the `"comeback"` variant
   label, `send_number` column name). (`change_log.md`, Entry 16)
+- [ ] **A real `broke_streak_week1` field exists; its relationship to the
+  break-rate proxy is unresolved.** The real CSVs carry a literal field not
+  in the course's original schema. Checked against the day1/day7 proxy:
+  only 57.3% agreement (262/457 starters), meaning they measure related but
+  different things, not two versions of the same signal. Not a validation,
+  not a refutation. Whether any analysis should prefer the literal field
+  over the proxy now that it exists is undecided. (`change_log.md`, Entry 17)
 - [ ] **New, from the same run: weeks 1-4 don't match the real data.**
   `data/metric-findings.md` Q1 and `data/metric-diagnosis.md`'s metric tree
   report cohort-1-4 Day-7 retention and break rate figures that don't match

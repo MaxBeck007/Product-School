@@ -176,25 +176,25 @@ schema used in `data/metric-findings.md`:
 
 ```sql
 -- Day-7 retention by acquisition channel, treatment arm, two weeks side by side
-SELECT u.channel,
+SELECT u.acquisition_channel,
        u.cohort_week,
        COUNT(*)                        AS n,
-       ROUND(AVG(r.day_7) * 100, 1)    AS day7_pct
+       ROUND(AVG(r.day_7::INT) * 100, 1) AS day7_pct
 FROM nudge_users u
 JOIN nudge_retention r ON u.user_id = r.user_id
-WHERE u.variant = 'summary_v1'
+WHERE u.variant = 'comeback'
   AND u.cohort_week IN (:week, :compare_week)
-GROUP BY u.channel, u.cohort_week
-ORDER BY u.channel, u.cohort_week;
+GROUP BY u.acquisition_channel, u.cohort_week
+ORDER BY u.acquisition_channel, u.cohort_week;
 ```
 
-> `Assumption:` the column is named `u.channel`. The channel values
-> (organic / paid / referral) are **verified** present, they are quoted in
-> `data/metric-diagnosis.md` H1, but that file reports the figures without
-> showing its SQL, so the **exact column name is not recorded anywhere in this
-> workspace**. Same caveat for `platform` in an H2 query. **What would confirm
-> it:** one `DESCRIBE nudge_users` against the restored CSVs. Do not paste this
-> query to Raj as final until that runs.
+> **Resolved 2026-10-02:** ran `DESCRIBE nudge_users` against the real,
+> restored CSVs. Column is `acquisition_channel`, not `channel`; `platform`
+> is named as assumed. Query above updated to match, along with the real
+> variant label (`comeback`, not `summary_v1`, see `change_log.md` Entry
+> 16) and the boolean `day_7` cast DuckDB's `AVG()` requires. **Still not
+> run against real rows**, this agent has no implementation yet (`agents/registry.md`),
+> only the query is now verified-correct syntax. (`change_log.md` Entry 17)
 
 **Read the n column before the percentage.** §3's channel counts are 30, 14, and
 6. Splitting those across two weeks makes them smaller. The query is worth
@@ -389,11 +389,10 @@ the gates are calibrated lives in how often it fires.
 
 In order, and none of these are optional:
 
-1. **Restore the CSVs.** Nothing here works without them
-   (`workspace-audit.md` G4).
-2. **Run `DESCRIBE nudge_users`.** Confirm or correct the `channel` and
-   `platform` column names, then fix §3 step 4's query. An agent posting a
-   broken query to Raj loses his trust once and does not get it back cheaply.
+1. ~~**Restore the CSVs.**~~ **Done 2026-10-02.** (`change_log.md` Entry 16)
+2. ~~**Run `DESCRIBE nudge_users`.**~~ **Done 2026-10-02:** column is
+   `acquisition_channel`, not `channel`; `platform` as assumed. §3 step 4's
+   query fixed to match. (`change_log.md` Entry 17)
 3. **Pass `agents/monday-retention.md` §4 steps 1-4** for the pulse agent. This
    agent inherits its inputs, so an unverified pulse agent makes this one
    unverifiable by construction.
@@ -420,7 +419,11 @@ In order, and none of these are optional:
    log, and nothing in this spec makes anyone responsible for filling it. If it
    stays blank the learning loop has nothing to grade and the stack stops
    compounding.
-4. **Does the break-rate proxy survive contact with a real event log?** Every
-   break-rate figure in this workspace is day-1-active / day-7-inactive
-   (`data/metric-findings.md` Q2). Step 2 leans on that lever more than any
-   other.
+4. **Does the break-rate proxy survive contact with a real event log?**
+   **Partially answered, 2026-10-02:** a real `broke_streak_week1` field
+   exists in the restored CSVs, not previously known about. Checked against
+   the day1/day7 proxy for all 457 starters: only 57.3% agreement. That's
+   not survival and not failure, it's evidence the two measure related but
+   different things. Step 2 still leans on the proxy; whether it should lean
+   on the literal field instead is a new, separate open question
+   (`open-items.md`), not resolved by this check.

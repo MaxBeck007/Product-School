@@ -216,11 +216,16 @@ someone else.
   revealed:** cohorts 1-4 in the real CSVs don't match
   `data/metric-findings.md`/`data/metric-diagnosis.md`'s stated figures for
   those cohorts, week 5 matches. See `open-items.md`.
-- **The `channel` column name is unverified.** Channel values (organic, paid,
-  referral) are quoted in `data/metric-diagnosis.md` H1, but that file reports
-  the figures without its SQL, so the actual column name is recorded nowhere.
-  Same for `platform` in H2. One `DESCRIBE nudge_users` settles both. Do not
-  hand Raj a query built on the guess (`agents/anomaly-diagnosis.md` §3 step 4).
+- **Resolved 2026-10-02: the channel column is `acquisition_channel`,
+  not `channel`.** `platform` is named as assumed. Ran `DESCRIBE
+  nudge_users` against the real CSVs. Fixed in `agents/metric-pulse.md`,
+  `agents/anomaly-diagnosis.md` §3 step 4, and `agents/registry.md`.
+  (`change_log.md`, Entry 17)
+- **New gap, same investigation: a real `broke_streak_week1` field exists,
+  not in the course's original schema.** Checked against the day1/day7
+  break-rate proxy, only 57.3% agreement, they measure related but
+  different things, not a validation either way. Whether any analysis
+  should prefer it over the proxy is undecided. (`open-items.md`)
 - **`outcome-log.md`'s `what_actually_happened` field has no owner.** It is
   human-written and it is the only input to the learning loop. Unowned, the
   stack will look like it is compounding while learning nothing

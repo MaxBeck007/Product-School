@@ -265,8 +265,11 @@ vs. DM. Added by this lesson:
    channel label. **Note this is a different unrun check from H2's**, which is
    whether the *control* arm shows the same iOS/Android gap. Two separate
    queries, and neither answers the other.
-   Also unverified: whether the column is actually named `channel` (§3). One
-   `DESCRIBE nudge_users` settles that one.
+   **Resolved 2026-10-02:** ran `DESCRIBE nudge_users` against the real,
+   restored CSVs. The column is `acquisition_channel`, not `channel`, and
+   `platform` is named as assumed. Queries elsewhere in this stack that say
+   `u.channel` need `u.acquisition_channel` substituted before they run.
+   (`change_log.md` Entry 17)
 3. **At what arm size does the 3pt threshold become 2pt?** §2 proposes ~500 per
    variant as a judgment call. A weekly-comparison power calculation would
    replace the guess with a number.
