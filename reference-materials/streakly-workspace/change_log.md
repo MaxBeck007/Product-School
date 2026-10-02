@@ -673,3 +673,35 @@ historical pre-redesign record. `06-systems/final-presentation.html` is the
 capstone's actual submitted artifact and the one this request was about.
 
 **Open item carried forward:** none.
+
+---
+
+## Entry 15, closed workspace-audit gaps G2 and G6; confirmed G7 already closed
+
+**Date:** 2026-10-02. Max asked to act on `workspace-audit.md`'s deferred
+R1 and R4 recommendations.
+
+**What happened:**
+- **R1 / G2 (no single open-items file):** added `open-items.md`,
+  consolidating what was scattered across `change_log.md` carry-forwards,
+  `docs/prd.md` Open Questions, `data/experiment-design.md`, and
+  `CLAUDE.md`'s Known gaps. Resolved items are kept struck-through with the
+  entry that closed them, not deleted.
+- **R4 / G6 (no stakeholder template, no profile for Max):** added
+  `stakeholders/_template.md` (reusable for a new teammate or product) and
+  `stakeholders/max.md`, sourced entirely from `CLAUDE.md`'s existing
+  "How I Want Claude to Work With Me" and "Working habits" sections, not
+  invented. Includes an Insights Discovery read (Cool Blue primary, Fiery
+  Red secondary), extending the pattern from Entry 11.
+- **R3 / G7 (no metric glossary):** checked first rather than assumed.
+  Already closed, folded into `CLAUDE.md`'s "Metric definitions, use these
+  exactly" section during the same P7L1 pass that found the gap. No
+  duplicate file created.
+- Added all three new files to `CLAUDE.md`'s file map.
+
+**Change made:** three new files (`open-items.md`,
+`stakeholders/_template.md`, `stakeholders/max.md`), plus three new rows
+in `CLAUDE.md`'s "Where to look for what" table.
+
+**Open item carried forward:** R6-R8 (file-move reorg) remain explicitly
+deferred, unchanged from the original audit.
