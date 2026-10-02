@@ -135,11 +135,17 @@ Full registry, connection plan, learning loop, and roadmap:
 | Anomaly-to-Hypothesis | diagnose | pulse alert, behind a manual YES gate | `agents/anomaly-diagnosis.md` |
 | Weekly Insight | synthesize | Friday, after `skills/friday-status.md` | `agents/weekly-insight.md` |
 
-**The one fact to carry into every session about these:** all three are
-specified and **unverified**. No agent in this workspace has ever produced a
-real Streakly number, because the five source CSVs are absent
-(`workspace-audit.md` G4). `agents/monday_retention.py` compiles and was
-smoke-tested against synthetic CSVs only.
+**The one fact to carry into every session about these:** `metric-pulse`,
+`anomaly-diagnosis`, and `weekly-insight` remain specified and
+**unverified** against real data. `monday-retention` is the exception,
+**run for real 2026-10-02**, it reproduced `data/metric-findings.md` Q3
+exactly (76.0%/46.0%, week 5) after 3 real schema fixes
+(`change_log.md` Entry 16). That same run surfaced a new, unresolved
+discrepancy: cohorts 1-4 in the real data don't match
+`data/metric-findings.md`/`data/metric-diagnosis.md`'s stated figures for
+those cohorts (see `agents/monday-retention.md` §4a). Treat weeks 1-4
+figures as unconfirmed against the CSVs now in `data/raw/` until that's
+resolved; the week-5 experiment result is not affected.
 
 **None of them posts to Slack automatically.** Each prints its message and Max
 pastes it. Three specs reached that independently: at ~50 users per arm these
@@ -204,9 +210,12 @@ someone else.
   product decision.
 - **Prototype cannot evidence the eligibility rule**, only tone and the
   lesson mechanic (`docs/qa-checklist.md` rows 1, 7, 8, 9).
-- **P5 source CSVs are not in this workspace**, so the data analysis is not
-  re-runnable here (`workspace-audit.md` G4). This now also blocks all three
-  agents, none has ever run on real data.
+- **P5 source CSVs, resolved 2026-10-02:** now in `data/raw/`
+  (`workspace-audit.md` G4 closed). The analysis is re-runnable, and
+  `monday-retention` has been run against it for real. **New gap this
+  revealed:** cohorts 1-4 in the real CSVs don't match
+  `data/metric-findings.md`/`data/metric-diagnosis.md`'s stated figures for
+  those cohorts, week 5 matches. See `open-items.md`.
 - **The `channel` column name is unverified.** Channel values (organic, paid,
   referral) are quoted in `data/metric-diagnosis.md` H1, but that file reports
   the figures without its SQL, so the actual column name is recorded nowhere.

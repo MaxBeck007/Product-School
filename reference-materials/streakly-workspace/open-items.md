@@ -54,13 +54,19 @@
 - [ ] **The `channel` and `platform` column names are unverified.** Quoted
   in `data/metric-diagnosis.md` without the SQL that produced them, a
   `DESCRIBE nudge_users` would settle both. (`CLAUDE.md`, Known gaps)
-- [ ] **Agents have never run on real data.** `agents/monday_retention.py`
-  was smoke-tested only against synthetic CSVs. **Partially closed:** the 5
-  real CSVs (`users.csv`, `sessions.csv`, `retention.csv`, `nudges.csv`,
-  `comeback_sends.csv`) were added to `reference-materials/` on 2026-09-28,
-  closing most of gap G4, but the agent script has not yet been re-run
-  against them to confirm it reproduces `data/metric-findings.md`'s numbers
-  for real. Offered, not yet done.
+- [x] ~~Agents have never run on real data.~~ **Resolved 2026-10-02:** ran
+  `agents/monday_retention.py` against the real CSVs in `data/raw/` for
+  real. Reproduced `data/metric-findings.md` Q3 exactly (76.0%/46.0%, week
+  5). Required 3 real schema fixes (boolean casts, the `"comeback"` variant
+  label, `send_number` column name). (`change_log.md`, Entry 16)
+- [ ] **New, from the same run: weeks 1-4 don't match the real data.**
+  `data/metric-findings.md` Q1 and `data/metric-diagnosis.md`'s metric tree
+  report cohort-1-4 Day-7 retention and break rate figures that don't match
+  the real CSVs now in `data/raw/` (same schema, same row counts, different
+  values). Week 5 matches closely in both forms (blended and split by
+  variant). Guess: a reseeded sample from a shared course dataset, not
+  confirmed. Not actioned, no file rewritten. (`change_log.md`, Entry 16;
+  `agents/monday-retention.md`, §4a, full discrepancy table)
 - [ ] **`outcome-log.md`'s `what_actually_happened` field has no owner.**
   It's human-written and the only input to the learning loop; unowned, the
   agent stack will look like it's compounding while learning nothing.

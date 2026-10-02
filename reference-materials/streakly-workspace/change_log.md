@@ -705,3 +705,47 @@ in `CLAUDE.md`'s "Where to look for what" table.
 
 **Open item carried forward:** R6-R8 (file-move reorg) remain explicitly
 deferred, unchanged from the original audit.
+
+---
+
+## Entry 16, Monday retention agent run for real against real data
+
+**Date:** 2026-10-02. Not roleplayed. Max asked to actually close
+`workspace-audit.md` G4 rather than leave it as an offer.
+
+**What happened:** copied the 5 real CSVs Max added to `reference-materials/`
+on 2026-09-28 into `data/raw/`, renamed to match the schema
+`agents/monday_retention.py` expects (`nudge_users.csv`, etc.), installed
+`duckdb`, and ran the script for real: `python agents/monday_retention.py
+--week 5 --compare-week 4`.
+
+**It failed twice before it ran, for real reasons, each fixed and kept:**
+1. `AVG(BOOLEAN)` error, the real CSVs use literal `true`/`false`, not 0/1
+   integers as assumed. Cast with `::INT`.
+2. `KeyError: 'all'`, the real variant label is `"comeback"`, not
+   `"summary_v1"`. Every reference in `build()` updated.
+3. (Caught before running, by inspecting headers first) the real
+   `nudge_weekly_summary_sends` column is `send_number`, not `week_number`.
+
+**Step 2 of the script's own verification protocol passed exactly:**
+treatment 76.0% vs. control 46.0% in week 5, matching `data/metric-findings.md`
+Q3 to the decimal. First real-data result any agent in this workspace has
+ever produced.
+
+**Second finding, not smoothed over:** the same real data's cohort weeks 1-4
+(Day-7 retention and break rate, queried directly, independent of the
+week-5 split) do not match what `data/metric-findings.md` Q1 and
+`data/metric-diagnosis.md` report for those cohorts. Same row counts per
+cohort (100), same schema, different values. Week 5 (both blended and
+split by variant) matches closely. **Guess, not confirmed:** a reseeded or
+regenerated sample from a shared course dataset. **Not actioned:**
+`metric-findings.md`/`metric-diagnosis.md` were not rewritten, that's a
+bigger call than a script fix.
+
+**Change made:** `data/raw/*.csv` added (5 files), `agents/monday_retention.py`
+fixed (3 schema corrections), `agents/monday-retention.md` updated with the
+real run and the full discrepancy table.
+
+**Open item carried forward, new:** reconcile or explain the weeks 1-4
+discrepancy between `data/metric-findings.md`/`data/metric-diagnosis.md`
+and the real CSVs now in `data/raw/`. Added to `open-items.md`.
