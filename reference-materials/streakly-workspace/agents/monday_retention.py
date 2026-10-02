@@ -99,7 +99,7 @@ def day7_by_variant(con, week: int) -> dict:
         SELECT CASE WHEN u.variant IS NULL OR u.variant = '' THEN 'all'
                     ELSE u.variant END AS arm,
                COUNT(*) AS n,
-               ROUND(AVG(r.day_7) * 100, 1) AS day7_pct
+               ROUND(AVG(r.day_7::INT) * 100, 1) AS day7_pct
         FROM nudge_users u
         JOIN nudge_retention r ON u.user_id = r.user_id
         WHERE u.cohort_week = ?
@@ -119,8 +119,8 @@ def break_rate(con, week: int):
         con,
         """
         SELECT ROUND(
-                 100.0 * SUM(CASE WHEN day_1 = 1 AND day_7 = 0 THEN 1 ELSE 0 END)
-                 / NULLIF(SUM(CASE WHEN day_1 = 1 THEN 1 ELSE 0 END), 0), 1)
+                 100.0 * SUM(CASE WHEN day_1 AND NOT day_7 THEN 1 ELSE 0 END)
+                 / NULLIF(SUM(CASE WHEN day_1 THEN 1 ELSE 0 END), 0), 1)
         FROM nudge_retention
         WHERE cohort_week = ?
         """,
@@ -142,12 +142,15 @@ def sessions_per_user(con, week: int):
 
 
 def open_rate(con, week: int, variant: str):
+    # NOTE: the real CSV uses `send_number`, not `week_number` as the course's
+    # schema note stated. Column renamed here to match the actual file,
+    # not the assumed schema. See change_log.md Entry 16.
     return scalar(
         con,
         """
-        SELECT ROUND(AVG(opened) * 100, 1)
+        SELECT ROUND(AVG(opened::INT) * 100, 1)
         FROM nudge_weekly_summary_sends
-        WHERE week_number = ? AND variant = ?
+        WHERE send_number = ? AND variant = ?
         """,
         [week, variant],
     )
@@ -186,18 +189,18 @@ def build(con, week: int, prev_week: int) -> str:
     if not now_arms:
         fail(f"no users found for cohort_week = {week}.")
 
-    treat_key = "summary_v1" if "summary_v1" in now_arms else "all"
+    treat_key = "comeback" if "comeback" in now_arms else "all"
     now_d7 = now_arms[treat_key]["day7"]
-    prev_key = "summary_v1" if "summary_v1" in prev_arms else "all"
+    prev_key = "comeback" if "comeback" in prev_arms else "all"
     prev_d7 = prev_arms.get(prev_key, {}).get("day7")
     d7_delta = delta(now_d7, prev_d7)
 
     # Honesty guard: a treatment-vs-pre-launch comparison is not like for like.
-    not_like_for_like = treat_key == "summary_v1" and prev_key == "all"
+    not_like_for_like = treat_key == "comeback" and prev_key == "all"
 
     br_now, br_prev = break_rate(con, week), break_rate(con, prev_week)
     sp_now, sp_prev = sessions_per_user(con, week), sessions_per_user(con, prev_week)
-    or_now, or_prev = open_rate(con, week, "summary_v1"), open_rate(con, prev_week, "summary_v1")
+    or_now, or_prev = open_rate(con, week, "comeback"), open_rate(con, prev_week, "comeback")
 
     movers = {
         "break rate among starters": (br_now, br_prev, delta(br_now, br_prev)),
@@ -209,7 +212,7 @@ def build(con, week: int, prev_week: int) -> str:
     lines = [f"*Streakly retention, Monday {date.today().isoformat()}*", ""]
 
     # ---- Headline
-    arm_label = "treatment" if treat_key == "summary_v1" else "all users"
+    arm_label = "treatment" if treat_key == "comeback" else "all users"
     head = f"*Day-7 retention ({arm_label}):* {now_d7}%"
     if prev_d7 is not None:
         head += f" vs {prev_d7}% last week ({d7_delta:+.1f}pts)"

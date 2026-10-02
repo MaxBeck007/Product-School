@@ -705,3 +705,99 @@ in `CLAUDE.md`'s "Where to look for what" table.
 
 **Open item carried forward:** R6-R8 (file-move reorg) remain explicitly
 deferred, unchanged from the original audit.
+
+---
+
+## Entry 16, Monday retention agent run for real against real data
+
+**Date:** 2026-10-02. Not roleplayed. Max asked to actually close
+`workspace-audit.md` G4 rather than leave it as an offer.
+
+**What happened:** copied the 5 real CSVs Max added to `reference-materials/`
+on 2026-09-28 into `data/raw/`, renamed to match the schema
+`agents/monday_retention.py` expects (`nudge_users.csv`, etc.), installed
+`duckdb`, and ran the script for real: `python agents/monday_retention.py
+--week 5 --compare-week 4`.
+
+**It failed twice before it ran, for real reasons, each fixed and kept:**
+1. `AVG(BOOLEAN)` error, the real CSVs use literal `true`/`false`, not 0/1
+   integers as assumed. Cast with `::INT`.
+2. `KeyError: 'all'`, the real variant label is `"comeback"`, not
+   `"summary_v1"`. Every reference in `build()` updated.
+3. (Caught before running, by inspecting headers first) the real
+   `nudge_weekly_summary_sends` column is `send_number`, not `week_number`.
+
+**Step 2 of the script's own verification protocol passed exactly:**
+treatment 76.0% vs. control 46.0% in week 5, matching `data/metric-findings.md`
+Q3 to the decimal. First real-data result any agent in this workspace has
+ever produced.
+
+**Second finding, not smoothed over:** the same real data's cohort weeks 1-4
+(Day-7 retention and break rate, queried directly, independent of the
+week-5 split) do not match what `data/metric-findings.md` Q1 and
+`data/metric-diagnosis.md` report for those cohorts. Same row counts per
+cohort (100), same schema, different values. Week 5 (both blended and
+split by variant) matches closely. **Guess, not confirmed:** a reseeded or
+regenerated sample from a shared course dataset. **Not actioned:**
+`metric-findings.md`/`metric-diagnosis.md` were not rewritten, that's a
+bigger call than a script fix.
+
+**Change made:** `data/raw/*.csv` added (5 files), `agents/monday_retention.py`
+fixed (3 schema corrections), `agents/monday-retention.md` updated with the
+real run and the full discrepancy table.
+
+**Open item carried forward, new:** reconcile or explain the weeks 1-4
+discrepancy between `data/metric-findings.md`/`data/metric-diagnosis.md`
+and the real CSVs now in `data/raw/`. Added to `open-items.md`.
+
+---
+
+## Entry 17, column name resolved; a real streak-break field investigated, not oversold
+
+**Date:** 2026-10-02. Max asked for a reasonable next step out of the P8
+walkthrough. Not roleplayed.
+
+**What happened, part 1, the easy close:** three files
+(`agents/metric-pulse.md` §8.2, `agents/anomaly-diagnosis.md` §3 step 4 and
+§7.2, `agents/registry.md` §6.3) independently flagged the same unverified
+question, is the channel column actually named `channel`. Ran `DESCRIBE
+nudge_users` against the real, restored CSVs: **it's `acquisition_channel`,
+not `channel`**; `platform` is named as assumed. Fixed the example SQL in
+`anomaly-diagnosis.md` §3 step 4 to match (also fixed its variant label and
+boolean cast, same issues as `change_log.md` Entry 16), and closed the
+question in all three files plus the registry's top-of-file status banner.
+
+**What happened, part 2, the one worth being careful about.** `nudge_users.csv`
+and `nudge_retention.csv` both carry a field, `broke_streak_week1`, that
+doesn't exist in the course's originally-described schema and that nobody in
+this workspace knew about until this session. Every break-rate figure
+everywhere (`CLAUDE.md`'s glossary, `data/metric-findings.md` Q2,
+`data/metric-diagnosis.md`) is explicitly labeled a proxy, day-1-active and
+day-7-inactive, because "no literal streak-break event field exists in the
+data." That sentence needed checking now that one appears to.
+
+**Checked, not assumed:** cross-tabbed `broke_streak_week1` against the
+day_1/day_7 proxy for all 457 "starters" (day_1 = true). **Agreement: 57.3%
+(262/457).** That is not a validation of the proxy and not a refutation of
+it, it's evidence the two fields measure **related but different things**:
+`broke_streak_week1` appears to track whether a user's streak ever broke
+during week 1 at any point, while the day_1/day_7 proxy tracks whether they
+were active on two specific days. A user can break a streak mid-week and
+still be active by day 7 (looks "sustained" to the proxy, "broke" to the
+field), or vice versa. 129 of 276 proxy-"broke" users are *not* flagged by
+the literal field; 48 of 181 proxy-"sustained" users *are*.
+
+**Not actioned:** none of the "proxy" language in `CLAUDE.md`,
+`data/metric-findings.md`, or `data/metric-diagnosis.md` was rewritten. A
+57% agreement rate does not license swapping the proxy for the literal
+field, or vice versa, that is a bigger analytical call than this check
+settles, and `data/metric-diagnosis.md`'s whole metric tree is built on the
+proxy. Logged as a real open question instead of a quiet upgrade.
+
+**Change made:** `agents/metric-pulse.md`, `agents/anomaly-diagnosis.md`,
+`agents/registry.md` (column name, 3 files); no changes to `CLAUDE.md`,
+`data/metric-findings.md`, or `data/metric-diagnosis.md`.
+
+**Open item carried forward, new:** what does `broke_streak_week1` actually
+mean, and should any analysis prefer it over the proxy now that it exists?
+Not decided here. Added to `open-items.md`.

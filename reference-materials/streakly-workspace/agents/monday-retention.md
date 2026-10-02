@@ -5,12 +5,15 @@
 > engineering ask, not a production job, and nothing in it is direction to the
 > team. It answers one question: what changed in the retention picture since
 > last Monday, and what should I look at this week.
-> **Blocking dependency, stated up front:** the five source CSVs
-> (`nudge_users`, `nudge_sessions`, `nudge_retention`, `nudge_nudges`,
-> `nudge_weekly_summary_sends`) are cited by `data/metric-findings.md` but are
-> **not in this workspace** (`workspace-audit.md` G4). The script below cannot
-> produce a number until they are restored to `data/raw/` or the connection is
-> repointed. It is written to fail loudly rather than fill the gap.
+> **Dependency, resolved 2026-10-02:** the five source CSVs are now in
+> `data/raw/` (copied from the real files Max added to `reference-materials/`
+> on 2026-09-28), closing `workspace-audit.md` G4. **Run for real against
+> them**, see "Real run" below. Three real schema differences from what this
+> spec originally assumed were found and fixed in `agents/monday_retention.py`,
+> not papered over: `day_1`/`day_7`/`day_30`/`opened` are literal booleans,
+> not 0/1 integers; the variant label is `"comeback"`, not `"summary_v1"`;
+> and `nudge_weekly_summary_sends` uses `send_number`, not `week_number`.
+> See `change_log.md` Entry 16 for the full record.
 
 ---
 
@@ -78,6 +81,53 @@ Do not schedule anything until all four pass.
 
 Only after all four: run it manually every Monday for three weeks. Schedule it
 only once you have stopped finding surprises in the output.
+
+## 4a. Real run, 2026-10-02 — step 2 passed, with a real finding alongside it
+
+Ran `python agents/monday_retention.py --week 5 --compare-week 4` against the
+real CSVs in `data/raw/`, not synthetic ones. **Step 2 (reproduce a known
+result) passed exactly:** treatment 76.0% vs. control 46.0% in week 5,
+matching `data/metric-findings.md` Q3 to the decimal. This is the first time
+any agent in this workspace has produced a number from real data.
+
+**A second, unprompted finding, reported rather than smoothed over:** the
+script also queries Day-7 retention and break rate by cohort week 1-4
+directly against the real data, independent of the week-5 experiment split.
+Those numbers **do not match** what `data/metric-findings.md` Q1 and
+`data/metric-diagnosis.md`'s metric tree report for cohorts 1-4:
+
+| Cohort week | Day-7, documented | Day-7, real data | Break rate, documented | Break rate, real data |
+| --- | --- | --- | --- | --- |
+| 1 | 60.0% | 37.0% | 38.9% | 61.5% |
+| 2 | 53.0% | 37.0% | 45.6% | 60.0% |
+| 3 | 48.0% | 31.0% | 51.5% | 70.7% |
+| 4 | 44.0% | 27.0% | 56.5% | 71.0% |
+| 5 (blended) | 61.0% | 61.0% ✓ | 40.0% | 38.5% (close) |
+
+Week 5, blended and split by variant, holds up. Weeks 1-4 do not, for either
+metric. **What this means:** the week-5 experiment result, the actual basis
+for the Comeback screen recommendation, is independently reconfirmed against
+real data. The weeks 1-4 pre-launch decline narrative in
+`data/metric-findings.md` Q1 and `data/metric-diagnosis.md` was built against
+a dataset snapshot that no longer matches the CSVs now in this workspace,
+same schema, same row counts (100/cohort week), different values.
+**Guess, not confirmed:** this is a regenerated or reseeded sample from a
+shared course dataset, not evidence that the original analysis was wrong.
+**What would confirm it:** asking whether the course's shared dataset is
+reseeded between sessions. **Not actioned:** `data/metric-findings.md` and
+`data/metric-diagnosis.md` were not rewritten to the new weeks 1-4 numbers,
+that is a bigger decision than a script fix and Max's call, not mine to make
+silently. Logged as a new open item instead.
+
+**Three real schema fixes made to `agents/monday_retention.py` to get here**
+(not assumption, verified against the actual CSV headers):
+1. `day_1`, `day_7`, `day_30`, `opened` are literal booleans in the real
+   files, the original queries assumed 0/1 integers and DuckDB's `AVG()`
+   rejected booleans outright. Cast with `::INT` or rewritten as `CASE WHEN`.
+2. The real variant label is `"comeback"`, not `"summary_v1"`, every
+   reference in `build()` updated to match.
+3. `nudge_weekly_summary_sends` uses `send_number`, not `week_number`, as
+   its column name.
 
 ## 5. Slack message template
 

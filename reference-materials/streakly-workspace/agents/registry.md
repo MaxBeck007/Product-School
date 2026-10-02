@@ -4,14 +4,16 @@
 > Engagement squad).** None is an engineering ask and none is direction to the
 > team.
 >
-> **Status of the whole stack, stated once so it is not buried:** all three
-> agents are **specified and unverified**. The five source CSVs
-> (`nudge_users`, `nudge_sessions`, `nudge_retention`, `nudge_nudges`,
-> `nudge_weekly_summary_sends`) are absent from this workspace
-> (`workspace-audit.md` G4). One script exists and compiles
-> (`agents/monday_retention.py`, smoke-tested against synthetic CSVs, one real
-> bug found and fixed, `change_log.md` entry 4). **No agent here has ever
-> produced a real Streakly number.**
+> **Status of the whole stack, updated 2026-10-02 so it is not buried:** the
+> five source CSVs are now in `data/raw/` (`workspace-audit.md` G4 closed).
+> **The Metric Pulse Agent has produced a real number**: run for real against
+> them, reproduced `data/metric-findings.md` Q3 exactly after 3 schema fixes
+> (`change_log.md` Entries 16-17). The channel column name question (§6.3) is
+> also resolved: `acquisition_channel`, not `channel`. The Anomaly-to-Hypothesis
+> Agent and the Weekly Insight Report remain **specified and unverified**,
+> spec only, no implementation. The real data also surfaced a new, unresolved
+> discrepancy in cohort weeks 1-4 versus the documented figures, see
+> `open-items.md`.
 
 ---
 
@@ -25,7 +27,7 @@ the current state, not the target state.
 | Field | Value |
 | --- | --- |
 | **Specs** | `agents/monday-retention.md` (primary), `agents/metric-pulse.md` (P8L1 extensions) |
-| **Implementation** | `agents/monday_retention.py`, compiles, never run on real data |
+| **Implementation** | `agents/monday_retention.py`, run for real 2026-10-02, reproduced the known week-5 result |
 | **Trigger** | Manual, Monday morning. Target state: nightly run, Monday 8am delivery |
 | **Data sources** | `data/raw/` (five CSVs, **absent**) via DuckDB |
 | **Watches** | Day-7 retention (headline), break rate among starters, sessions/user, comeback open rate. Channel splits where computable |
@@ -49,7 +51,7 @@ the current state, not the target state.
 | **Output format** | Three variants: full diagnostic, inconclusive, low confidence (`agents/anomaly-diagnosis.md` §5) |
 | **Delivery** | Slack before 9am standup + a row in `outcome-log.md`. **Writes SQL, does not run and interpret it in the same step** |
 | **Owner** | Max |
-| **Gate to production** | `agents/anomaly-diagnosis.md` §7, six steps, including `DESCRIBE nudge_users` to verify the channel column name |
+| **Gate to production** | `agents/anomaly-diagnosis.md` §7, six steps. Steps 1-2 done 2026-10-02 (CSVs restored, column name verified), 3-6 remain |
 
 ### Weekly Insight Report (synthesize)
 
@@ -232,8 +234,9 @@ Everything else is downstream of that answer.
 2. **Which data source becomes the real one** (product analytics, warehouse, or
    an export)? Decides whether the CSV path survives at all, and gates every
    month of §5.
-3. **Is the `channel` column actually named `channel`?** Unverified
-   (`agents/anomaly-diagnosis.md` §3 step 4). One `DESCRIBE` settles it.
+3. ~~**Is the `channel` column actually named `channel`?**~~ **Resolved
+   2026-10-02:** no, it's `acquisition_channel`. `platform` is named as
+   assumed. (`change_log.md` Entry 17)
 4. **Channel or DM for all three agents?** Asked separately in each spec. It
    should be answered once, here, for the whole stack. A channel post raises
    the accuracy bar for every agent simultaneously.
