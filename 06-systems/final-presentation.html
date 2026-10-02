@@ -5,181 +5,117 @@
 <title>Streakly Comeback Screen: Quarterly Review</title>
 <style>
   :root {
-    --ink: #1a1d23;
-    --sub: #5b6270;
-    --accent: #2f6f4f;
-    --accent-light: #e8f3ee;
-    --bg: #ffffff;
-    --panel: #f5f6f8;
-    --line: #e2e4e9;
-    --warn: #b3541e;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --accent:         #2a78d6;
+    --accent-light:   #cde2fb;
+    --accent-mid:     #86b6ef;
+    --context-gray:   #c3c2b7;
+    --context-fill:   #dcdad2;
+    --good:           #0ca30c;
+    --warning:        #fab219;
+    --warning-ink:    #8a5a00;
   }
   * { box-sizing: border-box; }
   html, body {
     margin: 0; padding: 0; height: 100%;
-    background: #14161a;
-    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
-    color: var(--ink);
+    background: var(--page-plane);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--text-primary);
   }
-  #deck {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
+  #deck { position: relative; width: 100%; height: 100vh; overflow: hidden; }
   .slide {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 56px 72px 40px;
-    background: var(--bg);
-    opacity: 0;
-    visibility: hidden;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 52px 68px 36px;
+    background: var(--surface-1);
+    opacity: 0; visibility: hidden;
     transition: opacity 0.25s ease;
   }
   .slide.active { opacity: 1; visibility: visible; }
   .kicker {
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 10px;
   }
-  h1 {
-    font-size: 34px;
-    margin: 0 0 24px;
-    line-height: 1.15;
-  }
-  .headline-number {
-    font-size: 64px;
-    font-weight: 800;
-    color: var(--accent);
-    margin: 0;
-    line-height: 1;
-  }
-  .headline-sub {
-    font-size: 17px;
-    color: var(--sub);
-    margin-top: 6px;
-  }
-  .row { display: flex; gap: 40px; flex: 1; min-height: 0; }
+  h1 { font-size: 32px; margin: 0 0 22px; line-height: 1.18; color: var(--text-primary); max-width: 900px; }
+  .row { display: flex; gap: 36px; flex: 1; min-height: 0; }
   .col { flex: 1; display: flex; flex-direction: column; gap: 14px; min-height: 0; overflow-y: auto; }
   .card {
-    background: var(--panel);
-    border: 1px solid var(--line);
+    background: var(--surface-1);
+    border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 18px 20px;
+    padding: 18px 22px;
   }
-  .card h3 {
-    margin: 0 0 8px;
-    font-size: 15px;
-    color: var(--ink);
-  }
-  .card p, .card li { font-size: 15px; color: var(--sub); line-height: 1.5; margin: 4px 0; }
-  .card ul { margin: 6px 0 0; padding-left: 18px; }
-  .stat-row { display: flex; gap: 28px; margin-top: 8px; flex-wrap: wrap; }
-  .stat {
-    background: var(--accent-light);
-    border-radius: 10px;
-    padding: 14px 20px;
-    min-width: 150px;
-  }
-  .stat .num { font-size: 30px; font-weight: 800; color: var(--accent); line-height: 1; }
-  .stat .lbl { font-size: 12.5px; color: var(--sub); margin-top: 4px; }
+  .card.panel { background: #f6f6f4; }
+  .card h3 { margin: 0 0 10px; font-size: 14px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; }
+  .card p, .card li { font-size: 15px; color: var(--text-secondary); line-height: 1.55; margin: 4px 0; }
+  .card ul { margin: 6px 0 0; padding-left: 0; list-style: none; }
+  .card ul li { padding-left: 22px; position: relative; margin: 8px 0; }
+  .card ul.yes li::before { content: ""; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+  .card ul.no li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 8px; height: 2px; background: var(--text-muted); }
   .quote {
-    font-style: italic;
-    font-size: 15px;
-    color: var(--ink);
-    border-left: 3px solid var(--accent);
-    padding-left: 14px;
-    margin: 8px 0;
+    font-style: italic; font-size: 15px; color: var(--text-primary);
+    border-left: 3px solid var(--accent); padding-left: 14px; margin: 10px 0;
   }
-  .quote cite { display: block; font-style: normal; font-size: 12.5px; color: var(--sub); margin-top: 4px; }
+  .quote cite { display: block; font-style: normal; font-size: 12.5px; color: var(--text-muted); margin-top: 4px; }
   .flag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--warn);
-    border: 1px solid var(--warn);
-    border-radius: 4px;
-    padding: 2px 6px;
-    margin-bottom: 6px;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--text-muted); border: 1px solid var(--gridline); border-radius: 4px;
+    padding: 3px 8px; margin-bottom: 10px;
   }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; border-radius: 999px;
+    padding: 5px 12px 5px 8px; margin: 3px 6px 3px 0;
+  }
+  .chip.good { background: #e7f7e7; color: #0a5e0a; }
+  .chip.warn { background: #fff4de; color: var(--warning-ink); }
+  .chip .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .chip.good .dot { background: var(--good); }
+  .chip.warn .dot { background: var(--warning); }
   .not-in-sources {
-    font-size: 13px;
-    color: var(--warn);
-    background: #fbeee3;
-    border: 1px solid #eccdb0;
-    border-radius: 6px;
-    padding: 8px 12px;
-    margin-top: 6px;
+    font-size: 13px; color: var(--warning-ink); background: #fff8ea;
+    border: 1px solid #f2dda4; border-radius: 6px; padding: 9px 12px; margin-top: 8px;
   }
-  .source {
-    font-size: 11.5px;
-    color: #9aa0ab;
-    margin-top: 2px;
-  }
+  .source { font-size: 11.5px; color: var(--text-muted); }
   .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: #9aa0ab;
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
-    margin-top: 16px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: var(--text-muted); padding-top: 13px;
+    border-top: 1px solid var(--gridline); margin-top: 14px;
   }
+  .legend { display: flex; gap: 16px; font-size: 12.5px; color: var(--text-secondary); margin: 2px 0 10px; }
+  .legend .key { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .swatch { width: 10px; height: 10px; border-radius: 2px; }
+  svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .chart-wrap { width: 100%; }
   #notesPanel {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    max-height: 40%;
-    background: #ffffff;
-    border-top: 2px solid var(--accent);
-    padding: 18px 72px;
-    overflow-y: auto;
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: var(--ink);
-    box-shadow: 0 -8px 24px rgba(0,0,0,0.12);
-    display: none;
-    z-index: 5;
+    position: absolute; bottom: 0; left: 0; right: 0; max-height: 40%;
+    background: #ffffff; border-top: 2px solid var(--accent); padding: 18px 68px;
+    overflow-y: auto; font-size: 14.5px; line-height: 1.55; color: var(--text-primary);
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.12); display: none; z-index: 5;
   }
   #notesPanel.open { display: block; }
   #notesPanel h4 { margin: 0 0 8px; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .controls {
-    position: fixed;
-    bottom: 18px; right: 24px;
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-  }
+  .controls { position: fixed; bottom: 18px; right: 24px; display: flex; gap: 8px; z-index: 10; }
   .controls button {
-    background: rgba(255,255,255,0.95);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 13px;
-    cursor: pointer;
-    color: var(--ink);
+    background: rgba(255,255,255,0.95); border: 1px solid var(--gridline); border-radius: 8px;
+    padding: 8px 14px; font-size: 13px; cursor: pointer; color: var(--text-primary);
   }
   .controls button:hover { background: var(--accent-light); border-color: var(--accent); }
-  #counter {
-    position: fixed;
-    bottom: 22px; left: 24px;
-    font-size: 12px;
-    color: #cfd3da;
-    z-index: 10;
-  }
+  #counter { position: fixed; bottom: 22px; left: 24px; font-size: 12px; color: #6b6b6b; z-index: 10; }
+  #progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--accent); z-index: 10; transition: width .25s ease; }
 </style>
 </head>
 <body>
 
+<div id="progress" style="width:16.6%;"></div>
 <div id="deck">
 
   <!-- Slide 1 -->
@@ -188,12 +124,37 @@
     <h1>Day-7 retention is failing, and we know why</h1>
     <div class="row">
       <div class="col">
-        <div class="stat-row">
-          <div class="stat"><div class="num">48% &rarr; 39%</div><div class="lbl">Day-7 retention, before and after the v2 redesign</div></div>
+        <div class="card chart-wrap">
+          <h3>Day-7 retention, before &rarr; after the v2 redesign</h3>
+          <svg viewBox="0 0 320 90" width="100%" height="110">
+            <line x1="20" y1="40" x2="300" y2="40" stroke="var(--gridline)" stroke-width="1"/>
+            <line x1="164.8" y1="40" x2="121.4" y2="40" stroke="#86b6ef" stroke-width="2"/>
+            <circle cx="164.8" cy="40" r="7" fill="#86b6ef"/>
+            <circle cx="121.4" cy="40" r="7" fill="var(--accent)"/>
+            <text x="164.8" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text-primary)">48%</text>
+            <text x="164.8" y="62" text-anchor="middle" font-size="11" fill="var(--text-muted)">before</text>
+            <text x="121.4" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="var(--accent)">39%</text>
+            <text x="121.4" y="62" text-anchor="middle" font-size="11" fill="var(--text-muted)">now</text>
+          </svg>
         </div>
-        <div class="card">
+        <div class="card chart-wrap">
+          <h3>Break rate among starters, cohort 1 &rarr; cohort 4</h3>
+          <svg viewBox="0 0 320 90" width="100%" height="110">
+            <line x1="20" y1="40" x2="300" y2="40" stroke="var(--gridline)" stroke-width="1"/>
+            <line x1="121.1" y1="40" x2="167.0" y2="40" stroke="#86b6ef" stroke-width="2"/>
+            <circle cx="121.1" cy="40" r="7" fill="#86b6ef"/>
+            <circle cx="167.0" cy="40" r="7" fill="var(--accent)"/>
+            <text x="121.1" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text-primary)">38.9%</text>
+            <text x="121.1" y="62" text-anchor="middle" font-size="11" fill="var(--text-muted)">cohort 1</text>
+            <text x="167.0" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="var(--accent)">56.5%</text>
+            <text x="167.0" y="62" text-anchor="middle" font-size="11" fill="var(--text-muted)">cohort 4</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card panel">
           <h3>The one insight</h3>
-          <p>The drop isn't fewer signups, and it isn't a failing notification channel. It's a rising break rate among starters: <strong>38.9% &rarr; 56.5%</strong> across cohort weeks 1&ndash;4.</p>
+          <p style="font-size:17px; color:var(--text-primary); line-height:1.6;">The drop isn't fewer signups, and it isn't a failing notification channel. It's a rising break rate among starters &mdash; a growing share of people who <em>do</em> start are gone by day 7.</p>
         </div>
       </div>
     </div>
@@ -209,22 +170,46 @@
     <h1>The trend was already there, and week 1 is where it bites hardest</h1>
     <div class="row">
       <div class="col">
-        <div class="card">
-          <h3>What changed</h3>
-          <p>The v2 redesign shipped, and the pre-launch decline shows no sign of leveling off on its own: Day-7 retention fell every cohort week, 60% &rarr; 44%, before the Comeback screen existed.</p>
+        <div class="card chart-wrap">
+          <h3>Day-7 retention by cohort week, pre-launch</h3>
+          <svg viewBox="0 0 340 160" width="100%" height="180">
+            <line x1="30" y1="130" x2="320" y2="130" stroke="var(--baseline)" stroke-width="1"/>
+            <line x1="30" y1="20" x2="320" y2="20" stroke="var(--gridline)" stroke-width="1"/>
+            <text x="22" y="24" text-anchor="end" font-size="10" fill="var(--text-muted)">70%</text>
+            <text x="22" y="134" text-anchor="end" font-size="10" fill="var(--text-muted)">0%</text>
+            <polyline points="60,52.3 150,66.4 240,77.4 310,86.1" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="60" cy="52.3" r="4" fill="var(--accent)"/>
+            <circle cx="150" cy="66.4" r="4" fill="var(--accent)"/>
+            <circle cx="240" cy="77.4" r="4" fill="var(--accent)"/>
+            <circle cx="310" cy="86.1" r="4" fill="var(--accent)"/>
+            <text x="60" y="40" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text-primary)">60%</text>
+            <text x="310" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="var(--accent)">44%</text>
+            <text x="60" y="148" text-anchor="middle" font-size="11" fill="var(--text-muted)">week 1</text>
+            <text x="150" y="148" text-anchor="middle" font-size="11" fill="var(--text-muted)">week 2</text>
+            <text x="240" y="148" text-anchor="middle" font-size="11" fill="var(--text-muted)">week 3</text>
+            <text x="310" y="148" text-anchor="middle" font-size="11" fill="var(--text-muted)">week 4</text>
+          </svg>
         </div>
-        <div class="card">
-          <h3>What we learned</h3>
-          <p>Users who break their momentum in week 1 retain roughly <strong>half as well</strong> by Day-30 (18.0%) as users who make it past week 1 (33.5%), and churn 16 points higher.</p>
+        <div class="card panel">
+          <p>Day-7 retention fell every cohort week, before the Comeback screen existed. The decline shows no sign of leveling off on its own.</p>
         </div>
       </div>
       <div class="col">
-        <div class="stat-row" style="margin-top:0;">
-          <div class="stat"><div class="num">60% &rarr; 44%</div><div class="lbl">Day-7 retention, cohort weeks 1&ndash;4, pre-launch</div></div>
-          <div class="stat"><div class="num">18.0% vs 33.5%</div><div class="lbl">Day-30 retention: broke in week 1 vs. sustained</div></div>
+        <div class="card chart-wrap">
+          <h3>Day-30 retention: broke in week 1 vs. sustained</h3>
+          <svg viewBox="0 0 280 170" width="100%" height="180">
+            <line x1="30" y1="140" x2="260" y2="140" stroke="var(--baseline)" stroke-width="1"/>
+            <rect x="70" y="140" width="24" height="0" fill="var(--context-fill)"/>
+            <rect x="70" y="73.9" width="24" height="66.1" rx="4" fill="var(--context-fill)"/>
+            <rect x="170" y="100.9" width="24" height="39.1" rx="4" fill="var(--accent)"/>
+            <text x="82" y="62" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text-secondary)">33.5%</text>
+            <text x="182" y="89" text-anchor="middle" font-size="16" font-weight="700" fill="var(--accent)">18.0%</text>
+            <text x="82" y="158" text-anchor="middle" font-size="11" fill="var(--text-muted)">sustained</text>
+            <text x="182" y="158" text-anchor="middle" font-size="11" fill="var(--text-muted)">broke wk 1</text>
+          </svg>
         </div>
-        <div class="card">
-          <p>Across every research source, the same root cause surfaces: the reset is all-or-nothing and there's no way back in.</p>
+        <div class="card panel">
+          <p>Users who break their momentum in week 1 retain <strong>roughly half as well</strong> by Day-30 as users who make it past week 1, and churn 16 points higher. Across every research source, the same root cause surfaces: the reset is all-or-nothing and there's no way back in.</p>
         </div>
       </div>
     </div>
@@ -240,29 +225,29 @@
     <h1>A personalized Comeback screen, not a general fix</h1>
     <div class="row">
       <div class="col">
-        <div class="card">
+        <div class="card panel">
           <h3>What it is</h3>
-          <ul>
+          <ul class="yes">
             <li>Best-streak stat shown first, not a zeroed counter</li>
-            <li>A 60-second lesson to rebuild momentum</li>
-            <li>A one-tap, free streak-freeze</li>
+            <li>A short comeback session to rebuild momentum, no pass/fail</li>
+            <li>A free, pre-applied streak-freeze &mdash; no tap, no catch</li>
           </ul>
-          <p>Built with data Streakly already has. No new integrations.</p>
+          <p style="margin-top:14px;">Built with data Streakly already has. No new integrations.</p>
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card panel">
           <h3>What it isn't</h3>
-          <ul>
-            <li>Not a fix for notification tone or frequency, that's a separate theme</li>
-            <li>Not monetized, the freeze is free by design, that's the white space no competitor has claimed</li>
-            <li>Not a committed, scoped build yet, this is discovery</li>
+          <ul class="no">
+            <li>Not a fix for notification tone or frequency &mdash; that's a separate theme</li>
+            <li>Not monetized &mdash; the freeze is free by design, the white space no competitor has claimed</li>
+            <li>Not a committed, scoped build yet &mdash; this is discovery</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer">
-      <span class="source">Sources: docs/decision-brief.md, Option B &amp; finding 4 &middot; CLAUDE.md</span>
+      <span class="source">Sources: docs/decision-brief.md, Option B &amp; finding 4 &middot; CLAUDE.md &middot; change_log.md Entry 10</span>
       <span>3 / 6</span>
     </div>
   </section>
@@ -274,25 +259,57 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <span class="flag">Illustrative, not real users</span>
+          <span class="flag">&#9888; Illustrative, not real users</span>
           <h3>Prototype</h3>
-          <p>Tested across three mock personas. The "welcome back" tone and best-streak stat needed no explanation; trust in the freeze came from tapping it, not from copy alone.</p>
+          <p>Tested across three mock personas. The &ldquo;welcome back&rdquo; tone and best-streak stat needed no explanation; trust in the freeze came from seeing it resolve, not from copy alone.</p>
         </div>
-        <div class="card">
-          <h3>Pilot data (real, cohort week 5, n=50/variant)</h3>
-          <div class="stat-row">
-            <div class="stat"><div class="num">76% vs 46%</div><div class="lbl">Day-7 retention, treatment vs. control</div></div>
-            <div class="stat"><div class="num">36% vs 22%</div><div class="lbl">Day-30 retention, treatment vs. control</div></div>
+        <div class="card chart-wrap">
+          <h3>Pilot retention, treatment vs. control (n=50/variant)</h3>
+          <div class="legend">
+            <span class="key"><span class="swatch" style="background:var(--accent)"></span>Treatment</span>
+            <span class="key"><span class="swatch" style="background:var(--context-fill)"></span>Control</span>
           </div>
-          <p>Open rate on the Comeback send climbed 28% &rarr; 56% across 4 sends; control stayed flat at 4&ndash;6%. Not a one-time bump.</p>
+          <svg viewBox="0 0 280 150" width="100%" height="150">
+            <line x1="30" y1="120" x2="260" y2="120" stroke="var(--baseline)" stroke-width="1"/>
+            <rect x="50" y="29.6" width="24" height="90.4" rx="4" fill="var(--accent)"/>
+            <rect x="76" y="64.4" width="24" height="55.6" rx="4" fill="var(--context-fill)"/>
+            <rect x="150" y="76.4" width="24" height="43.6" rx="4" fill="var(--accent)"/>
+            <rect x="176" y="93.6" width="24" height="26.4" rx="4" fill="var(--context-fill)"/>
+            <text x="62" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="var(--accent)">76%</text>
+            <text x="88" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-secondary)">46%</text>
+            <text x="162" y="69" text-anchor="middle" font-size="13" font-weight="700" fill="var(--accent)">36%</text>
+            <text x="188" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-secondary)">22%</text>
+            <text x="75" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)">Day-7</text>
+            <text x="175" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)">Day-30</text>
+          </svg>
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card chart-wrap">
+          <h3>Comeback-send open rate, 4 sends</h3>
+          <div class="legend">
+            <span class="key"><span class="swatch" style="background:var(--accent)"></span>Treatment</span>
+            <span class="key"><span class="swatch" style="background:var(--context-gray)"></span>Control</span>
+          </div>
+          <svg viewBox="0 0 280 150" width="100%" height="150">
+            <line x1="30" y1="120" x2="260" y2="120" stroke="var(--baseline)" stroke-width="1"/>
+            <polyline points="50,86 110,42.8 170,42.8 230,30.8" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="50,115.2 110,115.2 170,115.2 230,112.8" fill="none" stroke="var(--context-gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="50" cy="86" r="4" fill="var(--accent)"/><circle cx="230" cy="30.8" r="4" fill="var(--accent)"/>
+            <circle cx="50" cy="115.2" r="4" fill="var(--context-gray)"/><circle cx="230" cy="112.8" r="4" fill="var(--context-gray)"/>
+            <text x="50" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="var(--accent)">28%</text>
+            <text x="230" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="var(--accent)">56%</text>
+            <text x="230" y="128" text-anchor="middle" font-size="11" fill="var(--text-secondary)">6%</text>
+            <text x="50" y="135" text-anchor="middle" font-size="11" fill="var(--text-muted)">send 1</text>
+            <text x="230" y="146" text-anchor="middle" font-size="11" fill="var(--text-muted)">send 4</text>
+          </svg>
+          <p style="margin-top:4px;">Not a one-time novelty bump &mdash; engagement grew with exposure.</p>
+        </div>
+        <div class="card panel">
           <h3>User voice</h3>
           <p>6 of 10 unprompted NPS comments name the punishing reset directly; 2 name a streak-freeze as the fix they want, by feature name.</p>
           <div class="quote">
-            "I switched to Duolingo, at least there a missed day doesn't wipe everything, and a streak freeze feels forgiving."
+            &ldquo;I switched to Duolingo, at least there a missed day doesn't wipe everything, and a streak freeze feels forgiving.&rdquo;
             <cite>&mdash; Tom, churned user</cite>
           </div>
         </div>
@@ -310,23 +327,24 @@
     <h1>The test is designed. Three things still block a timeline.</h1>
     <div class="row">
       <div class="col">
-        <div class="card">
+        <div class="card panel">
           <h3>Milestone reached</h3>
-          <p>The full powered test is designed and ready to run: sized to detect a 5-point lift at 80% power, 95% significance, based on the pilot's own result.</p>
+          <div class="chip good"><span class="dot"></span>Full powered test designed</div>
+          <p style="margin-top:10px;">Sized to detect a 5-point lift at 80% power, 95% significance, based on the pilot's own result.</p>
         </div>
-        <div class="card">
+        <div class="card panel">
           <h3>Risk of waiting</h3>
           <p>Every week without addressing the week-1 break locks in the same drop we're already fighting. The pilot's numbers show the gap compounding, not holding flat.</p>
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card panel">
           <h3>Still open</h3>
-          <ul>
-            <li>Real weekly eligible-user volume is unconfirmed. Test needs ~0.46% of 85,000 WAU/week to fit an 8-week window.</li>
-            <li>Freeze eligibility and expiry rules are still undefined (Raj).</li>
-          </ul>
-          <div class="not-in-sources">Not in sources: sprint kickoff date and a committed rollout timeline. Discovery is scoped as 8 weeks from kickoff, but kickoff isn't scheduled yet.</div>
+          <div class="chip warn"><span class="dot"></span>Eligible-user volume unconfirmed</div>
+          <div class="chip warn"><span class="dot"></span>Freeze eligibility rules undefined</div>
+          <div class="chip warn"><span class="dot"></span>Sprint kickoff date not scheduled</div>
+          <p style="margin-top:10px;">Test needs ~0.46% of 85,000 WAU/week to fit an 8-week window &mdash; that volume isn't confirmed yet.</p>
+          <div class="not-in-sources">Not in sources: a committed rollout timeline. Discovery is scoped as 8 weeks from kickoff, but kickoff itself isn't scheduled.</div>
         </div>
       </div>
     </div>
@@ -342,13 +360,13 @@
     <h1>Sign off on the test, help unblock one number</h1>
     <div class="row">
       <div class="col">
-        <div class="card">
+        <div class="card panel">
           <h3>The ask</h3>
-          <p>Sign-off to run the full powered test before a company-wide scale decision, and a decision on the one number currently blocking that test's duration: real weekly eligible-user volume.</p>
+          <p style="font-size:17px; color:var(--text-primary);">Sign-off to run the full powered test before a company-wide scale decision, and a decision on the one number currently blocking that test's duration: real weekly eligible-user volume.</p>
         </div>
-        <div class="card">
+        <div class="card panel">
           <h3>What this is not</h3>
-          <p>Not a request to scale the feature today. The pilot result is real and directionally strong, but n=50 per variant is not enough on its own to commit the whole company to.</p>
+          <p>Not a request to scale the feature today. The pilot result is real and directionally strong &mdash; <strong>76% vs. 46% Day-7</strong> &mdash; but n=50 per variant is not enough on its own to commit the whole company to.</p>
         </div>
       </div>
     </div>
@@ -372,8 +390,8 @@
   var notes = {
     1: "Day-7 retention dropped from 48% to 39% after the v2 streak and notification redesign shipped, that's the number this whole deck is about. What that drop actually is matters more than the headline: it's not fewer people signing up, and it's not our notification channel breaking down, it's that a rising share of new users break their momentum early and never come back. I want to spend thirty seconds on that distinction before we go further, because it changes where we should be spending effort.",
     2: "The decline didn't start when we noticed it, it was already there in every cohort before the Comeback screen existed, Day-7 retention fell every single week from 60% down to 44% across the first four cohorts. What the data adds that the trend alone doesn't: users who break their momentum in week 1 retain about half as well thirty days out as users who make it past week 1, and they churn sixteen points higher. That's the moment we're trying to intervene on, not a general retention fix, specifically the week-1 break.",
-    3: "Here's what we're actually proposing: a Comeback screen shown right after a user breaks a streak, their best-streak stat, a sixty-second lesson to get momentum back, and a one-tap streak freeze, and we can build this with data we already have, no new integrations required. I want to be equally clear about what this isn't, because I don't want to oversell it in the room. It doesn't touch notification tone or frequency, that's a real issue but a separate one. It's not monetized, we're intentionally not charging for the freeze, that's the gap none of our competitors have claimed. And to be straightforward, this is still discovery, I'm not asking you to approve a committed build today.",
-    4: "Let me walk through what we actually know, starting with the weakest evidence and ending with the strongest. We ran a prototype through three mock personas, and I want to flag clearly that these are illustrative test sessions, not real users, so treat this as directional signal about tone and mechanics, not proof. What we did learn from it: the welcome-back tone landed immediately, but trust in the freeze came from actually tapping it, not from reading about it. Now the real evidence: in a live fifty-person-per-variant pilot, the Comeback screen group hit seventy-six percent Day-7 retention against forty-six percent for control, and that gap held at Day-30 too, thirty-six versus twenty-two. And this wasn't a one-time novelty spike, open rates on the Comeback send climbed from twenty-eight to fifty-six percent across four sends while control stayed flat the whole time. Behind all of this are real user words: six of ten unprompted NPS comments name the punishing reset directly, and one of our interview subjects told us in his own words that he left for a competitor specifically because their freeze felt forgiving and ours offered nothing.",
+    3: "Here's what we're actually proposing: a Comeback screen shown right after a user breaks a streak, their best-streak stat, a short comeback session to get momentum back, and a free, pre-applied streak freeze, no tap required, and we can build this with data we already have, no new integrations required. I want to be equally clear about what this isn't, because I don't want to oversell it in the room. It doesn't touch notification tone or frequency, that's a real issue but a separate one. It's not monetized, we're intentionally not charging for the freeze, that's the gap none of our competitors have claimed. And to be straightforward, this is still discovery, I'm not asking you to approve a committed build today.",
+    4: "Let me walk through what we actually know, starting with the weakest evidence and ending with the strongest. We ran a prototype through three mock personas, and I want to flag clearly that these are illustrative test sessions, not real users, so treat this as directional signal about tone and mechanics, not proof. What we did learn from it: the welcome-back tone landed immediately, but trust in the freeze came from actually seeing it resolve, not from reading about it. Now the real evidence: in a live fifty-person-per-variant pilot, the Comeback screen group hit seventy-six percent Day-7 retention against forty-six percent for control, and that gap held at Day-30 too, thirty-six versus twenty-two. And this wasn't a one-time novelty spike, open rates on the Comeback send climbed from twenty-eight to fifty-six percent across four sends while control stayed flat the whole time. Behind all of this are real user words: six of ten unprompted NPS comments name the punishing reset directly, and one of our interview subjects told us in his own words that he left for a competitor specifically because their freeze felt forgiving and ours offered nothing.",
     5: "We already have a fully designed, properly powered test ready to run, that's not a next step we still need to figure out, it's built and sized to detect a five-point lift with the statistical rigor a fifty-person pilot can't give us. I want to be upfront about what's still blocking us from committing to a timeline for that test. We don't yet know how many weekly active users actually break a streak in a given week, and until we know that number we can't commit to how long the test will take to run. Separately, Raj still needs the freeze eligibility and expiry rules defined before engineering can scope the work. And I'll say this plainly rather than paper over it: we don't have a sprint kickoff date yet, so I can't give you a rollout date today, and I'd rather tell you that now than invent one. The cost of not moving is real though, every week we wait is another week at the same break rate that's already cost us nine points of retention, and the pilot data shows that gap compounding, not holding steady.",
     6: "Here's the actual ask: sign off on running the full powered test before we commit to scaling this company-wide, and help me get an answer to the one number blocking that test's timeline, how many users per week actually break a streak. I want to be direct about what I'm not asking for. I'm not asking you to approve scaling this today, the pilot result is strong, but fifty people per variant is not a sample I'd want to bet the whole company's retention number on, and I don't think you would either."
   };
@@ -387,6 +405,7 @@
       s.classList.toggle('active', parseInt(s.dataset.slide, 10) === n);
     });
     document.getElementById('counter').textContent = 'Slide ' + n + ' / ' + total;
+    document.getElementById('progress').style.width = (n / total * 100) + '%';
     if (notesOpen) renderNotes(n);
   }
 

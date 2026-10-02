@@ -629,3 +629,47 @@ parallel.
 **Open item carried forward:** unchanged from Entry 12, the discovery
 trigger question still decides whether this stays at ~3 weeks or grows past
 it into unsized XL work.
+
+---
+
+## Entry 14, final presentation deck redesigned with real charts
+
+**Date:** 2026-10-02. Max asked for the deck to be made more visually
+appealing, not a roleplay, a direct design request against `06-systems/final-presentation.html`.
+
+**What happened:** rebuilt the deck using the house dataviz method (form
+before color, a validated palette, direct labels, status colors reserved
+for state not series). Every number that was previously a static text stat
+is now an actual chart:
+
+- Slide 1: two dumbbells (48%&rarr;39% Day-7; 38.9%&rarr;56.5% break rate),
+  the before/after form, not a one-bar bar chart.
+- Slide 2: a 4-point line (cohort weeks 1-4 decline) and an emphasis bar
+  pair (broke-in-week-1 vs. sustained), accent color on the number that's
+  the point, muted gray on the baseline.
+- Slide 4: a grouped bar (treatment vs. control, Day-7 and Day-30) and a
+  2-line chart (open rate across 4 sends), both with a legend since 2
+  series are genuinely being compared.
+- Slide 5: status chips (good-green for the one milestone reached,
+  warning-amber for each open item), icon + label per the palette's status
+  rule, never color alone.
+- Slide 3: converted the bullet lists to a dot/dash icon system distinguishing
+  "is" from "isn't" at a glance.
+
+**Fixed while rebuilding:** the deck still said "60-second lesson" and
+"one-tap streak-freeze" in three places (slides 3, 4's notes, the proposal
+copy), the same staleness flagged during the P6L4 walkthrough. Now reads
+"comeback session" and "pre-applied streak-freeze" throughout, consistent
+with Entries 8 and 10.
+
+**Verified:** resized the live page to 1000px and 1440px and checked
+computed layout (no horizontal overflow, no clipped cards), clicked through
+all 6 slides and confirmed the notes panel and counter work via real
+navigation, not just visual inspection.
+
+**Not touched:** `reference-materials/streakly-workspace/docs/presentation.html`
+and `docs/presentation.md`, the raw workspace's own copies, left as the
+historical pre-redesign record. `06-systems/final-presentation.html` is the
+capstone's actual submitted artifact and the one this request was about.
+
+**Open item carried forward:** none.
