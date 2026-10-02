@@ -532,7 +532,176 @@ instead of asking copy to close it.
 done screen, and restarted, full flow still works with no freeze button in
 the loop.
 
-**Open item carried forward:** `docs/prd.md` Story 5's acceptance criteria
-("the freeze is granted in one tap") and Open Question 3 ("auto-apply versus
-one-tap") are now stale, this entry resolves that question but the PRD text
-hasn't been updated to match yet.
+**Open item carried forward:** none, `docs/prd.md` Story 5's acceptance
+criteria and Open Question 3 were updated in this same pass to match.
+
+---
+
+## Entry 11, stakeholder color profiles added (Insights Discovery model)
+
+**Date:** 2026-09-30. Max asked for each stakeholder to get an Insights
+Discovery color profile (Cool Blue / Fiery Red / Earth Green / Sunshine
+Yellow) based on a wheel image they shared. **Label: inferred, not a real
+assessment.** No one took an actual Insights Discovery survey; these are
+Claude's read of documented behavior, sourced the same way the rest of each
+profile already is.
+
+**What happened:** added a color-profile section to each of
+`stakeholders/raj.md`, `stakeholders/lena.md`, `stakeholders/marcus.md`.
+
+- **Raj:** primary Cool Blue (analytical-before-opinion, wants acceptance
+  criteria and edge cases named upfront, async/bullet-point communicator),
+  secondary Earth Green (pushes back on disruption and scope creep, not on
+  slowness).
+- **Lena:** primary Earth Green (leads with "here's what users told us"
+  before her own design opinion, wants the empty state defined so no real
+  user hits a broken moment), secondary Cool Blue (won't design from a vibe,
+  wants to see the evidence directly).
+- **Marcus:** primary Fiery Red (wants the recommendation in the first
+  sentence, separates problem from solution on purpose, moves fast once a
+  framing is concrete), secondary Cool Blue (wants the ask connected to a
+  specific number, not a hunch).
+
+**Reasoning:** each profile's color read is tied to a specific already-
+sourced quote or behavior in that person's file, not invented from the role
+title alone (a designer doesn't have to be Yellow, an engineer doesn't have
+to be Blue, both colors here are argued from evidence already in the
+workspace).
+
+**Changes made:** three stakeholder files only. No change to
+`docs/spec-readiness.md` or `docs/design-review.md`, this doesn't retroactively
+change what roleplayed-Raj or roleplayed-Lena already said, it's a new lens
+on the same documented behavior.
+
+**Open item carried forward:** none.
+
+---
+
+## Entry 12, Raj T-shirt sizes the effort (end of Module 4), roleplayed
+
+**Date:** 2026-09-30. **Label: roleplayed, not a real estimate.** Full
+writeup: `docs/effort-tshirt-sizing.md`. Not a scripted course exercise,
+Max asked for this directly, grounded in everything accumulated through P4.
+
+**What happened:** sized the reactive Comeback screen only (schema change +
+migration, freeze eligibility logic, client build, empty-state edge case),
+explicitly excluding personalization (already its own ticket) and the
+proactive piece (no concept exists, sizing nothing would be a guess).
+
+**The size: L.** Schema change and migration is the long pole, not the
+client screen, the equivalent of the `User` model is touched everywhere
+(`docs/codebase-summary.md` section 5).
+
+**Assumption the size depends on, stated rather than buried:** the
+discovery trigger is assumed to be a cheap server-side check on next app
+open. If it actually needs new push notification infrastructure, size
+becomes **XL** instead. This ties a real cost to `docs/prd.md` Open
+Question 7, which was previously just a documented gap, not a decision with
+a price attached.
+
+**Change made:** new file only, `docs/effort-tshirt-sizing.md`. No changes
+to `docs/prd.md`, `docs/spec-readiness.md`, or the prototype.
+
+**Open item carried forward:** `docs/prd.md` Open Question 7 (discovery
+trigger) now has a cost attached (L vs. XL), which raises its priority
+relative to the other open questions, but the question itself is still
+unresolved.
+
+---
+
+## Entry 13, Raj translates L into weeks, roleplayed
+
+**Date:** 2026-09-30. **Label: roleplayed, not a real estimate.** Follow-up
+to Entry 12, added to `docs/effort-tshirt-sizing.md` rather than a new file.
+
+**What happened:** Max asked what "L" means in weeks. Raj flagged upfront
+that there's no real sprint velocity in this workspace to calibrate
+against, then sized the individual pieces from Entry 12 and added them up
+instead of guessing at a label.
+
+**The number: roughly 2.5-3 weeks for one engineer** (Raj, this squad has
+no second backend engineer), with the schema/migration work (1-1.5 weeks)
+as the long pole and the client build explicitly sequential to it, not
+parallel.
+
+**Change made:** appended to `docs/effort-tshirt-sizing.md`, no new file.
+
+**Open item carried forward:** unchanged from Entry 12, the discovery
+trigger question still decides whether this stays at ~3 weeks or grows past
+it into unsized XL work.
+
+---
+
+## Entry 14, final presentation deck redesigned with real charts
+
+**Date:** 2026-10-02. Max asked for the deck to be made more visually
+appealing, not a roleplay, a direct design request against `06-systems/final-presentation.html`.
+
+**What happened:** rebuilt the deck using the house dataviz method (form
+before color, a validated palette, direct labels, status colors reserved
+for state not series). Every number that was previously a static text stat
+is now an actual chart:
+
+- Slide 1: two dumbbells (48%&rarr;39% Day-7; 38.9%&rarr;56.5% break rate),
+  the before/after form, not a one-bar bar chart.
+- Slide 2: a 4-point line (cohort weeks 1-4 decline) and an emphasis bar
+  pair (broke-in-week-1 vs. sustained), accent color on the number that's
+  the point, muted gray on the baseline.
+- Slide 4: a grouped bar (treatment vs. control, Day-7 and Day-30) and a
+  2-line chart (open rate across 4 sends), both with a legend since 2
+  series are genuinely being compared.
+- Slide 5: status chips (good-green for the one milestone reached,
+  warning-amber for each open item), icon + label per the palette's status
+  rule, never color alone.
+- Slide 3: converted the bullet lists to a dot/dash icon system distinguishing
+  "is" from "isn't" at a glance.
+
+**Fixed while rebuilding:** the deck still said "60-second lesson" and
+"one-tap streak-freeze" in three places (slides 3, 4's notes, the proposal
+copy), the same staleness flagged during the P6L4 walkthrough. Now reads
+"comeback session" and "pre-applied streak-freeze" throughout, consistent
+with Entries 8 and 10.
+
+**Verified:** resized the live page to 1000px and 1440px and checked
+computed layout (no horizontal overflow, no clipped cards), clicked through
+all 6 slides and confirmed the notes panel and counter work via real
+navigation, not just visual inspection.
+
+**Not touched:** `reference-materials/streakly-workspace/docs/presentation.html`
+and `docs/presentation.md`, the raw workspace's own copies, left as the
+historical pre-redesign record. `06-systems/final-presentation.html` is the
+capstone's actual submitted artifact and the one this request was about.
+
+**Open item carried forward:** none.
+
+---
+
+## Entry 15, closed workspace-audit gaps G2 and G6; confirmed G7 already closed
+
+**Date:** 2026-10-02. Max asked to act on `workspace-audit.md`'s deferred
+R1 and R4 recommendations.
+
+**What happened:**
+- **R1 / G2 (no single open-items file):** added `open-items.md`,
+  consolidating what was scattered across `change_log.md` carry-forwards,
+  `docs/prd.md` Open Questions, `data/experiment-design.md`, and
+  `CLAUDE.md`'s Known gaps. Resolved items are kept struck-through with the
+  entry that closed them, not deleted.
+- **R4 / G6 (no stakeholder template, no profile for Max):** added
+  `stakeholders/_template.md` (reusable for a new teammate or product) and
+  `stakeholders/max.md`, sourced entirely from `CLAUDE.md`'s existing
+  "How I Want Claude to Work With Me" and "Working habits" sections, not
+  invented. Includes an Insights Discovery read (Cool Blue primary, Fiery
+  Red secondary), extending the pattern from Entry 11.
+- **R3 / G7 (no metric glossary):** checked first rather than assumed.
+  Already closed, folded into `CLAUDE.md`'s "Metric definitions, use these
+  exactly" section during the same P7L1 pass that found the gap. No
+  duplicate file created.
+- Added all three new files to `CLAUDE.md`'s file map.
+
+**Change made:** three new files (`open-items.md`,
+`stakeholders/_template.md`, `stakeholders/max.md`), plus three new rows
+in `CLAUDE.md`'s "Where to look for what" table.
+
+**Open item carried forward:** R6-R8 (file-move reorg) remain explicitly
+deferred, unchanged from the original audit.

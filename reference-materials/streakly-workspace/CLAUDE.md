@@ -86,6 +86,9 @@ Discovery. No committed scope. The recommendation is **not** "ship it," it is
 | Workspace gaps and reorg options | `workspace-audit.md` |
 | Per-artifact confidence ratings | `docs/capstone-session.md` |
 | The untouched P1 baseline | `project-skeleton.md` |
+| Everything currently open, in one place | `open-items.md` |
+| Stakeholder profile template, for a new teammate or product | `stakeholders/_template.md` |
+| Max's own working profile (what calibrates skills *from*, not just *to*) | `stakeholders/max.md` |
 
 **Precedence when documents conflict:** `docs/one-pager.md` and
 `docs/recommendation-memo.md` are current. `docs/prd.md` is the working spec.

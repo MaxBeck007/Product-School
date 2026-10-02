@@ -51,3 +51,23 @@ conversation with Raj:** he already surfaces the hard open question himself
 (freeze rules, who qualifies) before being asked, so the prep isn't "convince
 him it's feasible," it's "come with an actual answer to the question he's
 already asked twice."
+
+## Insights Discovery color profile (inferred, not a real assessment)
+
+**Primary: Cool Blue. Secondary: Earth Green.**
+
+**Why Blue:** every sourced data point is analytical-before-opinion, checking
+the data before forming a read ("Was looking at the data last night"),
+deliberately non-committal until evidence supports a position ("Probably
+both honestly"), wanting acceptance criteria and edge cases named upfront,
+async-first and bullet-point communication, disliking surprises in
+standups. Detailed, Disciplined, Objective.
+
+**Why Green as secondary, not Red or Yellow:** what he pushes back on is
+disruption, not slowness, scope creep mid-sprint, anything touching the
+streak/notification pipeline without a rollback plan. That's consistency
+and reliability, not urgency or influence.
+
+**How to work with him:** come with the data already looked at, not a
+request for him to look at it live. Name edge cases before he has to ask.
+Written async, not a verbal pitch.

@@ -157,6 +157,11 @@ instrumented.
    (`research/interview-synthesis.md`). Added after pressure-testing surfaced it as
    the objection most likely to stall the initiative if raised for the first time in
    a Raj/Marcus review rather than named here first (`docs/objection-log.md`).
+   **Now has a cost attached (`docs/effort-tshirt-sizing.md`):** the reactive
+   screen sizes as an L if this resolves to a cheap server-side check, or an
+   XL if it needs new push notification infrastructure. Still unresolved,
+   but no longer just a documented gap, it changes the estimate by a full
+   size.
 8. **Reactive-only reach: is this a named non-goal or a scope expansion?** The
    Comeback screen reaches a user only *after* a lapse. But the primary metric,
    Day-7 retention, measures a population that includes users who are anxious and
